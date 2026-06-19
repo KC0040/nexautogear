@@ -13,5 +13,25 @@
   "feat.grip.t": "GripSafe-Technologie",
   "feat.grip.d": "Verbessertes Bead-Seat-Design verhindert Reifenschlupf bei hohem Drehmoment.",
   "feat.tpms.t": "TPMS-fähiges Design",
-  "feat.tpms.d": "Alle Felgen vorgebohrt und kompatibel mit NEX Senser TPMS."
+  "feat.tpms.d": "Alle Felgen vorgebohrt und kompatibel mit NEX Senser TPMS.",
+
+  "about.eyebrow.story": "Wie Wir Begannen",
+  "about.h2.story": "Aufgebaut Aus<br/>Echter Branchenerfahrung",
+  "about.eyebrow.cert": "Qualitätsstandards",
+  "about.h2.cert": "Zertifizierungen &amp; Standards",
+  "about.eyebrow.prog": "B2B-Programme",
+  "about.h2.prog": "Was Wir Partnern Bieten",
+  "about.eyebrow.global": "Globale Reichweite",
+  "about.h2.global": "60+ B2B-Kunden.<br/>Eine Lieferkette.",
+  "about.h2.cta": "Bereit zur Partnerschaft?",
+
+  "catalog.h1": "VOLLSTÄNDIGER PRODUKTKATALOG",
+  "catalog.sub": "Direktbezug vom Werk für Hochleistungs-Automobilkomponenten. Für Händler, Fachbetriebe und Großhändler konzipiert.",
+  "catalog.h2.wheels": "AegisRim Schmiedefelgen",
+  "catalog.h2.tpms": "NEX Senser TPMS",
+  "catalog.h2.tires": "Hochleistungsreifen",
+  "catalog.h2.b2b": "B2B-Partnerprogramm",
+
+  "inquiry.h1": "Anfrage für ein<br/><span class=\"text-primary-container\">B2B-Angebot</span>",
+  "inquiry.sub": "Teilen Sie uns Ihren Bedarf mit. Wir antworten innerhalb eines Werktages mit Preisen, Verfügbarkeit und Konditionen."
 }

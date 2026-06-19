@@ -13,5 +13,25 @@
   "feat.grip.t": "Technologie GripSafe",
   "feat.grip.d": "Conception de siège de talon améliorée pour prévenir le glissement du pneu sous couple élevé.",
   "feat.tpms.t": "Design Compatible TPMS",
-  "feat.tpms.d": "Toutes les jantes pré-percées et compatibles avec le TPMS NEX Senser."
+  "feat.tpms.d": "Toutes les jantes pré-percées et compatibles avec le TPMS NEX Senser.",
+
+  "about.eyebrow.story": "Comment Nous Avons Commencé",
+  "about.h2.story": "Construit à Partir<br/>d'une Vraie Expérience Industrielle",
+  "about.eyebrow.cert": "Normes de Qualité",
+  "about.h2.cert": "Certifications &amp; Normes",
+  "about.eyebrow.prog": "Programmes B2B",
+  "about.h2.prog": "Ce Que Nous Offrons aux Partenaires",
+  "about.eyebrow.global": "Portée Mondiale",
+  "about.h2.global": "60+ Clients B2B.<br/>Une Chaîne d'Approvisionnement.",
+  "about.h2.cta": "Prêt à Collaborer ?",
+
+  "catalog.h1": "CATALOGUE PRODUITS COMPLET",
+  "catalog.sub": "Approvisionnement B2B direct d'usine pour composants automobiles haute performance. Conçu pour les distributeurs, ateliers professionnels et revendeurs à fort volume.",
+  "catalog.h2.wheels": "Jantes Forgées AegisRim",
+  "catalog.h2.tpms": "TPMS NEX Senser",
+  "catalog.h2.tires": "Pneus Haute Performance",
+  "catalog.h2.b2b": "Programme Partenaires B2B",
+
+  "inquiry.h1": "Demander un<br/><span class=\"text-primary-container\">Devis B2B</span>",
+  "inquiry.sub": "Dites-nous ce dont vous avez besoin. Nous vous répondrons avec les prix, la disponibilité et les conditions de compte dans un délai d'un jour ouvrable."
 }

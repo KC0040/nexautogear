@@ -13,5 +13,25 @@
   "feat.grip.t": "GripSafe テクノロジー",
   "feat.grip.d": "高トルク下でのタイヤスリップを防ぐ改良型ビードシート設計。",
   "feat.tpms.t": "TPMS対応設計",
-  "feat.tpms.d": "全ホイールはNEX Senser TPMSに対応した事前穿孔済み。"
+  "feat.tpms.d": "全ホイールはNEX Senser TPMSに対応した事前穿孔済み。",
+
+  "about.eyebrow.story": "始まりについて",
+  "about.h2.story": "実際の業界経験から<br/>生まれたブランド",
+  "about.eyebrow.cert": "品質基準",
+  "about.h2.cert": "認証と基準",
+  "about.eyebrow.prog": "B2Bプログラム",
+  "about.h2.prog": "パートナーへの提供内容",
+  "about.eyebrow.global": "グローバル展開",
+  "about.h2.global": "60社以上のB2Bクライアント。<br/>一つのサプライチェーン。",
+  "about.h2.cta": "パートナーシップを始めませんか？",
+
+  "catalog.h1": "製品カタログ全品目",
+  "catalog.sub": "高性能自動車部品の工場直接B2B調達。ディストリビューター、専門ショップ、大量販売店向けに設計。",
+  "catalog.h2.wheels": "AegisRim 鍛造ホイール",
+  "catalog.h2.tpms": "NEX Senser TPMS",
+  "catalog.h2.tires": "パフォーマンスタイヤ",
+  "catalog.h2.b2b": "B2Bパートナープログラム",
+
+  "inquiry.h1": "B2Bお見積もり<br/><span class=\"text-primary-container\">のご依頼</span>",
+  "inquiry.sub": "ご要望をお知らせください。1営業日以内に価格・在庫・取引条件をご連絡いたします。"
 }

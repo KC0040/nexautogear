@@ -13,5 +13,25 @@
   "feat.grip.t": "GripSafe Technology",
   "feat.grip.d": "Enhanced bead seat design to prevent tire slip under high torque.",
   "feat.tpms.t": "TPMS-Ready Design",
-  "feat.tpms.d": "All rims pre-drilled and compatible with NEX Senser TPMS."
+  "feat.tpms.d": "All rims pre-drilled and compatible with NEX Senser TPMS.",
+
+  "about.eyebrow.story": "How We Started",
+  "about.h2.story": "Built From<br/>Real Industry Experience",
+  "about.eyebrow.cert": "Quality Standards",
+  "about.h2.cert": "Certifications &amp; Standards",
+  "about.eyebrow.prog": "B2B Programs",
+  "about.h2.prog": "What We Offer Partners",
+  "about.eyebrow.global": "Global Reach",
+  "about.h2.global": "60+ B2B Clients.<br/>One Supply Chain.",
+  "about.h2.cta": "Ready to Partner?",
+
+  "catalog.h1": "COMPLETE PRODUCT CATALOG",
+  "catalog.sub": "Factory-direct B2B sourcing for high-performance automotive components. Engineered for distributors, professional shops, and high-volume retailers.",
+  "catalog.h2.wheels": "AegisRim Forged Wheels",
+  "catalog.h2.tpms": "NEX Senser TPMS",
+  "catalog.h2.tires": "Performance Tires",
+  "catalog.h2.b2b": "B2B Partner Program",
+
+  "inquiry.h1": "Request a<br/><span class=\"text-primary-container\">B2B Quote</span>",
+  "inquiry.sub": "Tell us what you need. We'll follow up with pricing, availability, and account terms within one business day."
 }

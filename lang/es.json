@@ -13,5 +13,25 @@
   "feat.grip.t": "Tecnología GripSafe",
   "feat.grip.d": "Diseño de asiento de talón mejorado que evita el deslizamiento del neumático bajo alto torque.",
   "feat.tpms.t": "Diseño Compatible con TPMS",
-  "feat.tpms.d": "Todas las llantas vienen pre-perforadas y compatibles con NEX Senser TPMS."
+  "feat.tpms.d": "Todas las llantas vienen pre-perforadas y compatibles con NEX Senser TPMS.",
+
+  "about.eyebrow.story": "Cómo Comenzamos",
+  "about.h2.story": "Construido Desde<br/>Experiencia Real en la Industria",
+  "about.eyebrow.cert": "Estándares de Calidad",
+  "about.h2.cert": "Certificaciones y Estándares",
+  "about.eyebrow.prog": "Programas B2B",
+  "about.h2.prog": "Lo Que Ofrecemos a Socios",
+  "about.eyebrow.global": "Alcance Global",
+  "about.h2.global": "60+ Clientes B2B.<br/>Una Cadena de Suministro.",
+  "about.h2.cta": "¿Listo para Asociarse?",
+
+  "catalog.h1": "CATÁLOGO COMPLETO DE PRODUCTOS",
+  "catalog.sub": "Abastecimiento B2B directo de fábrica para componentes automotrices de alto rendimiento. Diseñado para distribuidores, talleres profesionales y minoristas de alto volumen.",
+  "catalog.h2.wheels": "Ruedas Forjadas AegisRim",
+  "catalog.h2.tpms": "TPMS NEX Senser",
+  "catalog.h2.tires": "Neumáticos de Rendimiento",
+  "catalog.h2.b2b": "Programa de Socios B2B",
+
+  "inquiry.h1": "Solicita una<br/><span class=\"text-primary-container\">Cotización B2B</span>",
+  "inquiry.sub": "Cuéntanos qué necesitas. Te responderemos con precios, disponibilidad y condiciones de cuenta en un día hábil."
 }

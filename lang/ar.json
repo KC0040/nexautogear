@@ -13,5 +13,25 @@
   "feat.grip.t": "تقنية GripSafe",
   "feat.grip.d": "تصميم مقعد الحافة المحسّن لمنع انزلاق الإطار تحت عزم الدوران العالي.",
   "feat.tpms.t": "تصميم جاهز لـ TPMS",
-  "feat.tpms.d": "جميع الجنوط مثقوبة مسبقاً ومتوافقة مع NEX Senser TPMS."
+  "feat.tpms.d": "جميع الجنوط مثقوبة مسبقاً ومتوافقة مع NEX Senser TPMS.",
+
+  "about.eyebrow.story": "كيف بدأنا",
+  "about.h2.story": "بُني من<br/>خبرة صناعية حقيقية",
+  "about.eyebrow.cert": "معايير الجودة",
+  "about.h2.cert": "الشهادات والمعايير",
+  "about.eyebrow.prog": "برامج B2B",
+  "about.h2.prog": "ما نقدمه للشركاء",
+  "about.eyebrow.global": "الانتشار العالمي",
+  "about.h2.global": "أكثر من 60 عميل B2B.<br/>سلسلة توريد واحدة.",
+  "about.h2.cta": "مستعد للشراكة؟",
+
+  "catalog.h1": "الكتالوج الكامل للمنتجات",
+  "catalog.sub": "توريد B2B مباشر من المصنع لمكونات السيارات عالية الأداء. مصمم للموزعين والمحلات المتخصصة وتجار الجملة.",
+  "catalog.h2.wheels": "جنوط AegisRim المطروقة",
+  "catalog.h2.tpms": "NEX Senser TPMS",
+  "catalog.h2.tires": "إطارات الأداء",
+  "catalog.h2.b2b": "برنامج شراكة B2B",
+
+  "inquiry.h1": "طلب<br/><span class=\"text-primary-container\">عرض سعر B2B</span>",
+  "inquiry.sub": "أخبرنا بما تحتاجه. سنرد بالأسعار والتوفر وشروط الحساب خلال يوم عمل واحد."
 }
