@@ -1,0 +1,6 @@
+# Admin area — block direct access to non-PHP files
+Options -Indexes
+<FilesMatch "\.(sql|php~|bak)$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>

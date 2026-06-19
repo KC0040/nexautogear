@@ -1,0 +1,815 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Customer Application — NEXAutogear B2B</title>
+  <meta name="description" content="Apply for a NEXAutogear wholesale account. Submit your business information and trade references to get factory-direct pricing." />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    .form-wrap {
+      flex: 1;
+      padding: calc(var(--nav-h) + 2.5rem) 1.5rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .page-header { margin-bottom: 2rem; }
+    .page-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent-on); background: var(--accent);
+      padding: 0.25rem 0.65rem; border-radius: 4px; margin-bottom: 0.75rem;
+    }
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.75rem; font-weight: 900; margin-bottom: 0.35rem;
+    }
+    .page-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.65; max-width: 620px; }
+
+    /* ── Section cards ── */
+    .form-card {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .form-section {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-section:last-child { border-bottom: none; }
+    .form-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 1.1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .form-section-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .field-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .field-stack { display: flex; flex-direction: column; gap: 0.85rem; }
+
+    .field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .field label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.73rem; font-weight: 700; color: var(--text);
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .field label .req { color: #ff6b6b; margin-left: 2px; }
+
+    .field input, .field select, .field textarea {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 0.6rem 0.85rem;
+      font-size: 0.875rem; color: var(--text);
+      font-family: 'Inter', sans-serif; outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--accent);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .field select option { background: var(--bg2); }
+    .field textarea { resize: vertical; min-height: 80px; line-height: 1.55; }
+
+    /* Business type radio grid */
+    .btype-grid { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.25rem; }
+    .btype-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      cursor: pointer; font-size: 0.83rem;
+      transition: all 0.18s;
+    }
+    .btype-item:has(input:checked) {
+      border-color: var(--accent); background: rgba(255,209,101,0.07);
+    }
+    .btype-item input { accent-color: var(--accent); }
+
+    /* Trade reference block */
+    .tref-block {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem; margin-bottom: 0.75rem;
+    }
+    .tref-num {
+      font-family: 'Space Grotesk', sans-serif; font-size: 0.7rem; font-weight: 700;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 0.65rem;
+    }
+
+    /* Product interest checks */
+    .check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.25rem; }
+    .check-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      cursor: pointer; font-size: 0.83rem;
+      transition: all 0.18s;
+    }
+    .check-item:has(input:checked) {
+      border-color: var(--accent); background: rgba(255,209,101,0.06);
+    }
+    .check-item input { accent-color: var(--accent); }
+
+    /* Sub-spec panels */
+    .spec-panel {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem; margin-top: 0.75rem;
+    }
+    .spec-panel-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 0.75rem;
+    }
+    .spec-panel.blue { border-color: rgba(173,221,255,0.15); }
+    .spec-panel.blue .spec-panel-title { color: var(--blue); }
+
+    /* Legal block */
+    .legal-block {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem; margin-bottom: 1rem;
+      font-size: 0.8rem; color: var(--muted); line-height: 1.65;
+    }
+
+    /* Signature row */
+    .sig-area { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem; }
+    .sig-field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .sig-line {
+      border: none; border-bottom: 1px solid var(--border2);
+      height: 44px; background: transparent; width: 100%;
+      color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      padding: 0 0.25rem;
+    }
+    .sig-line:focus { outline: none; border-bottom-color: var(--accent); }
+    .sig-label-text {
+      font-family: 'Space Grotesk', sans-serif; font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
+    }
+
+    /* Resale certificate card */
+    .resale-card {
+      background: var(--card); border: 1px solid var(--border2);
+      border-radius: var(--radius-xl); overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .resale-header {
+      padding: 1rem 1.5rem; background: rgba(173,221,255,0.04);
+      border-bottom: 1px solid var(--border);
+    }
+    .resale-header-title {
+      font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700;
+      color: var(--blue); margin-bottom: 0.2rem;
+    }
+    .resale-header-sub { font-size: 0.8rem; color: var(--muted); }
+
+    /* Form actions */
+    .form-actions {
+      display: flex; gap: 0.75rem; justify-content: flex-end;
+      padding: 1.5rem 0; margin-top: 0.5rem;
+    }
+
+    /* ── PRINT / PDF MODE ── */
+    @media print {
+      @page { size: A4; margin: 16mm 14mm 16mm 14mm; }
+      body { background: #fff !important; color: #111 !important; padding: 0; font-size: 10pt; }
+      .nav, .nav-actions, .support-fab, .form-actions, .toast-wrap { display: none !important; }
+      .form-wrap { padding: 0 !important; max-width: 100%; }
+
+      .print-header { display: flex !important; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; border-bottom: 2px solid #111; padding-bottom: 0.75rem; }
+      .print-logo { font-family: 'Space Grotesk', sans-serif; font-size: 14pt; font-weight: 900; color: #000; }
+      .print-contact { font-size: 8pt; color: #555; text-align: right; line-height: 1.5; }
+      .page-header { margin-bottom: 1rem; }
+      .page-badge { background: #111 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-title { color: #000 !important; font-size: 14pt; }
+      .page-sub { color: #555 !important; }
+
+      .form-card, .resale-card {
+        background: #fff !important; border: 1px solid #ccc !important;
+        border-radius: 0 !important; box-shadow: none; margin-bottom: 8pt;
+        break-inside: avoid;
+      }
+      .form-section { border-bottom: 1px solid #ddd !important; }
+      .form-section-title { color: #333 !important; }
+      .form-section-title::after { background: #ddd !important; }
+
+      .field label, .sig-label-text { color: #333 !important; }
+      .field input, .field select, .field textarea, .sig-line {
+        background: #fff !important; border: none !important;
+        border-bottom: 1px solid #999 !important; border-radius: 0 !important;
+        padding: 3px 2px !important; color: #000 !important; font-size: 10pt;
+      }
+      .field select { -webkit-appearance: none; }
+      .btype-item, .check-item {
+        border: 1px solid #ccc !important; background: #fff !important; color: #222 !important;
+        -webkit-print-color-adjust: exact;
+      }
+      .tref-block, .spec-panel, .legal-block {
+        background: #f8f8f8 !important; border: 1px solid #ddd !important;
+      }
+      .spec-panel-title, .tref-num { color: #333 !important; }
+      .resale-header { background: #f0f4ff !important; }
+      .resale-header-title { color: #1a3a6b !important; }
+
+      .print-footer {
+        display: block !important; margin-top: 1rem; font-size: 8pt; color: #888;
+        text-align: center; border-top: 1px solid #ddd; padding-top: 0.4rem;
+      }
+    }
+    .print-header { display: none; }
+    .print-footer { display: none; }
+
+    @media (max-width: 640px) {
+      .field-grid-2, .field-grid-3 { grid-template-columns: 1fr; }
+      .sig-area { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">NEX<span>AUTO</span>GEAR</a>
+  <ul class="nav-links">
+    <li><a href="index.html#wheels">Wheels</a></li>
+    <li><a href="index.html#tires">Tires</a></li>
+    <li><a href="index.html#tpms">TPMS</a></li>
+    <li><a href="catalog/index.html">Catalog</a></li>
+    <li><a href="index.html#support">Support</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="members/login.html" class="btn btn-ghost btn-sm">Sign In</a>
+    <a href="members/register.html" class="btn btn-primary btn-sm">Create Account</a>
+  </div>
+</nav>
+
+<!-- Print-only header -->
+<div class="print-header">
+  <div class="print-logo">NEX<span style="color:#ffd165">AUTO</span>GEAR</div>
+  <div class="print-contact">
+    nexautogear.com<br/>
+    Sales@nexautogear.com<br/>
+    Support@nexautogear.com
+  </div>
+</div>
+
+<div class="form-wrap">
+
+  <div class="page-header">
+    <div class="page-badge">B2B Wholesale Application</div>
+    <div class="page-title">New Customer Application</div>
+    <div class="page-sub">
+      Complete all sections and return to <strong>Sales@nexautogear.com</strong>, or submit online at <strong>nexautogear.com/members/register.html</strong>.
+      A sales representative will review your application within 1–2 business days.
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 1: Business Information ═══ -->
+  <div class="form-card">
+    <div class="form-section">
+      <div class="form-section-title">1 — Business Information</div>
+      <div class="field-stack">
+        <div class="field-grid-2">
+          <div class="field">
+            <label>Legal Business Name <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. Mesa Tire & Wheel Inc." />
+          </div>
+          <div class="field">
+            <label>Trade / DBA Name</label>
+            <input type="text" placeholder="If different from legal name" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Street Address <span class="req">*</span></label>
+          <input type="text" placeholder="Street address" />
+        </div>
+
+        <div class="field-grid-3">
+          <div class="field">
+            <label>City <span class="req">*</span></label>
+            <input type="text" placeholder="City" />
+          </div>
+          <div class="field">
+            <label>State / Province <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. TX" />
+          </div>
+          <div class="field">
+            <label>ZIP / Postal Code <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. 75050" />
+          </div>
+        </div>
+
+        <div class="field-grid-3">
+          <div class="field">
+            <label>Business Phone <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 555 000 0000" />
+          </div>
+          <div class="field">
+            <label>Business Fax</label>
+            <input type="tel" placeholder="+1 555 000 0001" />
+          </div>
+          <div class="field">
+            <label>Business Email <span class="req">*</span></label>
+            <input type="email" placeholder="purchasing@yourcompany.com" />
+          </div>
+        </div>
+
+        <div class="field-grid-3">
+          <div class="field">
+            <label>Federal Tax ID / EIN <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. 12-3456789" />
+          </div>
+          <div class="field">
+            <label>D&amp;B Number (DUNS)</label>
+            <input type="text" placeholder="e.g. 01-234-5678" />
+          </div>
+          <div class="field">
+            <label>State Tax / Resale License #</label>
+            <input type="text" placeholder="e.g. 32045678-2" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Business Type <span class="req">*</span></label>
+          <div class="btype-grid">
+            <label class="btype-item"><input type="radio" name="biztype" value="corp" /> Corporation / Inc.</label>
+            <label class="btype-item"><input type="radio" name="biztype" value="llc" /> LLC</label>
+            <label class="btype-item"><input type="radio" name="biztype" value="partnership" /> Partnership</label>
+            <label class="btype-item"><input type="radio" name="biztype" value="individual" /> Sole Proprietor / Individual</label>
+            <label class="btype-item"><input type="radio" name="biztype" value="other" /> Other</label>
+          </div>
+        </div>
+
+        <div class="field-grid-2">
+          <div class="field">
+            <label>Years in Business <span class="req">*</span></label>
+            <select>
+              <option value="">Select…</option>
+              <option>Less than 1 year</option>
+              <option>1–2 years</option>
+              <option>3–5 years</option>
+              <option>6–10 years</option>
+              <option>More than 10 years</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Website</label>
+            <input type="url" placeholder="https://yourcompany.com" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 2: Contact Person ═══ -->
+  <div class="form-card">
+    <div class="form-section">
+      <div class="form-section-title">2 — Primary Contact</div>
+      <div class="field-stack">
+        <div class="field-grid-2">
+          <div class="field">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" placeholder="First and last name" />
+          </div>
+          <div class="field">
+            <label>Job Title <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. Owner, Purchasing Manager" />
+          </div>
+        </div>
+        <div class="field-grid-3">
+          <div class="field">
+            <label>Direct Phone <span class="req">*</span></label>
+            <input type="tel" placeholder="+1 555 000 0000" />
+          </div>
+          <div class="field">
+            <label>Mobile / WhatsApp</label>
+            <input type="tel" placeholder="+1 555 000 0000" />
+          </div>
+          <div class="field">
+            <label>Preferred Language</label>
+            <select>
+              <option>English</option>
+              <option>Español</option>
+              <option>中文</option>
+              <option>العربية</option>
+              <option>Português</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 3: Trade References ═══ -->
+  <div class="form-card">
+    <div class="form-section">
+      <div class="form-section-title">3 — Trade References (3 Required)</div>
+      <div class="field-stack">
+        <div class="tref-block">
+          <div class="tref-num">Reference 1</div>
+          <div class="field-grid-3">
+            <div class="field">
+              <label>Supplier / Company Name <span class="req">*</span></label>
+              <input type="text" placeholder="Company name" />
+            </div>
+            <div class="field">
+              <label>Phone <span class="req">*</span></label>
+              <input type="tel" placeholder="+1 555 000 0000" />
+            </div>
+            <div class="field">
+              <label>Fax</label>
+              <input type="tel" placeholder="+1 555 000 0001" />
+            </div>
+          </div>
+        </div>
+        <div class="tref-block">
+          <div class="tref-num">Reference 2</div>
+          <div class="field-grid-3">
+            <div class="field">
+              <label>Supplier / Company Name <span class="req">*</span></label>
+              <input type="text" placeholder="Company name" />
+            </div>
+            <div class="field">
+              <label>Phone <span class="req">*</span></label>
+              <input type="tel" placeholder="+1 555 000 0000" />
+            </div>
+            <div class="field">
+              <label>Fax</label>
+              <input type="tel" placeholder="+1 555 000 0001" />
+            </div>
+          </div>
+        </div>
+        <div class="tref-block">
+          <div class="tref-num">Reference 3</div>
+          <div class="field-grid-3">
+            <div class="field">
+              <label>Supplier / Company Name <span class="req">*</span></label>
+              <input type="text" placeholder="Company name" />
+            </div>
+            <div class="field">
+              <label>Phone <span class="req">*</span></label>
+              <input type="tel" placeholder="+1 555 000 0000" />
+            </div>
+            <div class="field">
+              <label>Fax</label>
+              <input type="tel" placeholder="+1 555 000 0001" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 4: Credit & Terms ═══ -->
+  <div class="form-card">
+    <div class="form-section">
+      <div class="form-section-title">4 — Credit &amp; Terms Request</div>
+      <div class="field-stack">
+        <div class="field-grid-2">
+          <div class="field">
+            <label>Terms Requested</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Net 30</option>
+              <option>Net 60</option>
+              <option>Net 90</option>
+              <option>COD (Cash on Delivery)</option>
+              <option>Wire Transfer in advance</option>
+              <option>Letter of Credit (L/C)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Credit Limit Requested (USD)</label>
+            <input type="text" placeholder="e.g. $25,000" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 5: Product Inquiry ═══ -->
+  <div class="form-card">
+    <div class="form-section">
+      <div class="form-section-title">5 — Product Inquiry</div>
+      <div class="field-stack">
+
+        <div class="field">
+          <label>Products of Interest <span class="req">*</span></label>
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" /> Wheels &amp; Rims</label>
+            <label class="check-item"><input type="checkbox" /> Tires</label>
+            <label class="check-item"><input type="checkbox" /> TPMS Sensors</label>
+            <label class="check-item"><input type="checkbox" /> Bundle Package</label>
+            <label class="check-item"><input type="checkbox" /> Accessories</label>
+            <label class="check-item"><input type="checkbox" /> All Products</label>
+          </div>
+        </div>
+
+        <!-- Wheels spec -->
+        <div class="spec-panel">
+          <div class="spec-panel-title">Wheels Detail (if applicable)</div>
+          <div class="field-grid-3">
+            <div class="field"><label>Size (Dia × Width)</label><input type="text" placeholder='e.g. 19"×9.5"' /></div>
+            <div class="field"><label>Bolt Pattern (PCD)</label><input type="text" placeholder="e.g. 5×114.3" /></div>
+            <div class="field"><label>Offset (ET)</label><input type="text" placeholder="e.g. ET35" /></div>
+          </div>
+          <div class="field-grid-3" style="margin-top:0.75rem;">
+            <div class="field">
+              <label>Finish</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Gloss Black</option>
+                <option>Matte Black</option>
+                <option>Brushed Silver</option>
+                <option>Gloss Silver</option>
+                <option>Gunmetal</option>
+                <option>Two-Tone</option>
+                <option>Custom</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Series / Type</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Street Performance</option>
+                <option>SUV &amp; Truck</option>
+                <option>Off-Road</option>
+                <option>Bespoke Custom</option>
+              </select>
+            </div>
+            <div class="field"><label>Vehicle (Year/Make/Model)</label><input type="text" placeholder="e.g. 2023 BMW M3" /></div>
+          </div>
+        </div>
+
+        <!-- Tires spec -->
+        <div class="spec-panel blue">
+          <div class="spec-panel-title">Tires Detail (if applicable)</div>
+          <div class="field-grid-3">
+            <div class="field"><label>Tire Size</label><input type="text" placeholder="e.g. 245/40R19" /></div>
+            <div class="field">
+              <label>Category</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Summer / Performance</option>
+                <option>All-Season</option>
+                <option>Winter / Snow</option>
+                <option>Off-Road / AT</option>
+                <option>EV Optimized</option>
+                <option>Run-Flat</option>
+                <option>Commercial</option>
+              </select>
+            </div>
+            <div class="field"><label>Brand Preference</label><input type="text" placeholder="e.g. any premium" /></div>
+          </div>
+        </div>
+
+        <!-- TPMS spec -->
+        <div class="spec-panel">
+          <div class="spec-panel-title">TPMS Detail (if applicable)</div>
+          <div class="field-grid-3">
+            <div class="field">
+              <label>Sensor Type</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Universal Programmable</option>
+                <option>OEM Replacement</option>
+                <option>Nexble Bluetooth</option>
+                <option>Not sure — advise me</option>
+              </select>
+            </div>
+            <div class="field"><label>Vehicle Application</label><input type="text" placeholder="e.g. 2022 Toyota RAV4" /></div>
+            <div class="field"><label>Quantity</label><input type="number" placeholder="e.g. 50" min="1" /></div>
+          </div>
+        </div>
+
+        <!-- Order logistics -->
+        <div class="field-grid-3">
+          <div class="field">
+            <label>Est. Monthly Volume (USD)</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Under $5,000</option>
+              <option>$5,000 – $15,000</option>
+              <option>$15,000 – $50,000</option>
+              <option>$50,000 – $100,000</option>
+              <option>Over $100,000</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Required By Date</label>
+            <input type="date" />
+          </div>
+          <div class="field">
+            <label>Preferred Shipping</label>
+            <select>
+              <option value="">No preference</option>
+              <option>Air Freight (DHL / FedEx)</option>
+              <option>Sea Freight (FCL)</option>
+              <option>Sea Freight (LCL)</option>
+              <option>Rail (China–Europe)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Additional Notes / Special Requirements</label>
+          <textarea placeholder="Custom branding, certifications, packaging, specific SKUs, etc."></textarea>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION 6: Credit Authorization & Personal Guarantee ═══ -->
+  <div class="form-card">
+    <div class="form-section">
+      <div class="form-section-title">6 — Credit Authorization &amp; Personal Guarantee</div>
+
+      <div class="legal-block">
+        The undersigned authorized representative of the applicant business hereby certifies that all information provided
+        in this application is true and accurate. Applicant authorizes NEXAutogear and its affiliates to investigate the
+        creditworthiness of the business, including contacting the trade references listed above. Applicant agrees that
+        NEXAutogear retains the right to modify or revoke credit terms at any time. All disputes arising from this
+        agreement shall be governed by the laws of the State of Delaware, USA, without regard to conflicts of law
+        principles. Past-due balances accrue interest at 1.5% per month (18% per annum) or the maximum allowed by
+        applicable law, whichever is less.
+      </div>
+
+      <div class="sig-area">
+        <div class="sig-field">
+          <input type="text" class="sig-line" placeholder="" />
+          <div class="sig-label-text">Authorized Signature</div>
+        </div>
+        <div class="sig-field">
+          <input type="text" class="sig-line" placeholder="" />
+          <div class="sig-label-text">Print Name &amp; Title</div>
+        </div>
+        <div class="sig-field">
+          <input type="date" class="sig-line" />
+          <div class="sig-label-text">Date</div>
+        </div>
+      </div>
+
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;line-height:1.6;">
+        <strong style="color:var(--text);">Personal Guarantee:</strong> The individual signing below personally
+        guarantees payment of all amounts owed by the above business entity to NEXAutogear, including
+        principal, interest, and collection costs. This guarantee is continuing and unconditional.
+      </div>
+
+      <div class="sig-area" style="margin-top:1rem;">
+        <div class="sig-field">
+          <input type="text" class="sig-line" placeholder="" />
+          <div class="sig-label-text">Guarantor Signature</div>
+        </div>
+        <div class="sig-field">
+          <input type="text" class="sig-line" placeholder="" />
+          <div class="sig-label-text">Guarantor Name &amp; Home Address</div>
+        </div>
+        <div class="sig-field">
+          <input type="date" class="sig-line" />
+          <div class="sig-label-text">Date</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ RESALE CERTIFICATE (Page 2) ═══ -->
+  <div class="resale-card">
+    <div class="resale-header">
+      <div class="resale-header-title">Uniform Sales &amp; Use Tax Exemption / Resale Certificate</div>
+      <div class="resale-header-sub">Multi-Jurisdiction Form — Complete if purchasing for resale (exempt from sales tax)</div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Buyer / Purchaser Information</div>
+      <div class="field-stack">
+        <div class="field-grid-3">
+          <div class="field">
+            <label>State of Issue <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. TX" />
+          </div>
+          <div class="field">
+            <label>Seller's Permit / License # <span class="req">*</span></label>
+            <input type="text" placeholder="e.g. 32045678-2" />
+          </div>
+          <div class="field">
+            <label>Type of Business</label>
+            <select>
+              <option value="">Select…</option>
+              <option>Retailer</option>
+              <option>Wholesaler</option>
+              <option>Distributor</option>
+              <option>Manufacturer</option>
+              <option>Lessor</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Description of Property / Services Purchased (for resale)</label>
+          <input type="text" placeholder="e.g. Automotive wheels, tires, and TPMS sensors for retail resale" />
+        </div>
+        <div class="legal-block" style="margin-bottom:0;">
+          I hereby certify that the property or services purchased from NEXAutogear will be resold by me in the
+          regular course of my business operations, and that I am entitled to make this purchase without payment
+          of sales or use tax. I understand that if I use this property or service for any purpose other than
+          resale, I will be liable for the applicable sales or use tax. This certificate shall be considered
+          part of each applicable order placed with NEXAutogear.
+        </div>
+      </div>
+    </div>
+    <div class="form-section" style="border-bottom:none;">
+      <div class="sig-area" style="grid-template-columns:1fr 1fr;">
+        <div class="sig-field">
+          <input type="text" class="sig-line" placeholder="" />
+          <div class="sig-label-text">Authorized Signature</div>
+        </div>
+        <div class="sig-field">
+          <input type="date" class="sig-line" />
+          <div class="sig-label-text">Date</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen actions -->
+  <div class="form-actions">
+    <button class="btn btn-ghost" onclick="window.print()">Download / Print PDF</button>
+    <button class="btn btn-primary btn-lg" onclick="submitForm()">Submit Application</button>
+  </div>
+
+  <div class="print-footer">
+    NEXAutogear · nexautogear.com · Sales@nexautogear.com · Support@nexautogear.com<br/>
+    Factory-direct wheels, tires &amp; TPMS — shipped globally
+  </div>
+
+</div>
+
+<!-- Support FAB -->
+<button class="support-fab" onclick="alert('Opening support chat…')">
+  &#128172; <div class="support-fab-badge">1</div>
+</button>
+
+<!-- Toast -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+  function submitForm() {
+    showToast('Submitting your application…', 'info');
+    setTimeout(() => {
+      showToast('Application received! We\'ll review within 1–2 business days.', 'success');
+    }, 1600);
+  }
+
+  function showToast(msg, type = 'info') {
+    const wrap = document.getElementById('toastWrap');
+    const t = document.createElement('div');
+    t.className = 'toast ' + type;
+    const icons = { success: '&#10003;', error: '&#10007;', info: '&#8505;' };
+    t.innerHTML = `<span>${icons[type]}</span><span class="toast-text">${msg}</span>`;
+    wrap.appendChild(t);
+    setTimeout(() => t.remove(), 4000);
+  }
+</script>
+  <script>window.NEX_CHAT = { endpoint: 'https://new2-chatbotservice.pkxdtf.easypanel.host/chat' };</script>
+  <script src="/js/widget.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2d7d92d6a95f1c2c58ca23/1jr0r50oo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
+

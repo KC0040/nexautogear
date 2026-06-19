@@ -1,0 +1,173 @@
+{
+  "categories": ["wheels", "tpms"],
+  "wheels": {
+    "brand": "AegisRim",
+    "brandUrl": "https://www.aegisrim.com",
+    "description": "Precision wheels certified to JWL, VIA, and TÜV Rheinland standards. Factory-direct B2B pricing.",
+    "certifications": ["JWL", "VIA", "TÜV Rheinland", "IATF 16949"],
+    "note": "Stock availability updated weekly by China team. Contact Sales for exact inventory.",
+    "products": [
+      {
+        "id": "aegisrim-saga-01",
+        "name": "SAGA Series 01",
+        "sku": "AR-SAGA-01",
+        "type": "Cast",
+        "finish": ["Gloss Black", "Matte Gunmetal", "Silver Machined"],
+        "sizes": ["17x7.5", "18x8", "18x9", "19x8.5", "20x9"],
+        "pcd": ["5x114.3", "5x120", "5x112"],
+        "image": "https://media.aegisrim.com/wheels/saga-01.jpg",
+        "stock_status": "contact",
+        "moq": 4,
+        "featured": true
+      },
+      {
+        "id": "aegisrim-apex-f1",
+        "name": "APEX F1",
+        "sku": "AR-APEX-F1",
+        "type": "Flow Formed",
+        "finish": ["Brushed Silver", "Hyper Black"],
+        "sizes": ["18x8", "19x8.5", "19x9.5", "20x10"],
+        "pcd": ["5x114.3", "5x120"],
+        "image": "https://media.aegisrim.com/wheels/apex-f1.jpg",
+        "stock_status": "contact",
+        "moq": 4,
+        "featured": true
+      },
+      {
+        "id": "aegisrim-street-s1",
+        "name": "Street S1",
+        "sku": "AR-STREET-S1",
+        "type": "Cast",
+        "finish": ["Gloss Black", "Silver", "Bronze"],
+        "sizes": ["16x7", "17x7", "17x7.5", "18x8"],
+        "pcd": ["4x100", "4x114.3", "5x114.3"],
+        "image": "/images/wheels/street-s1.jpg",
+        "stock_status": "in_stock",
+        "moq": 4,
+        "featured": false
+      },
+      {
+        "id": "aegisrim-track-r2",
+        "name": "Track R2",
+        "sku": "AR-TRACK-R2",
+        "type": "Flow Formed",
+        "finish": ["Matte Black", "Hyper Silver"],
+        "sizes": ["18x9", "18x10", "19x9.5", "19x10.5"],
+        "pcd": ["5x114.3", "5x120", "5x112"],
+        "image": "/images/wheels/track-r2.jpg",
+        "stock_status": "limited",
+        "moq": 4,
+        "featured": false
+      }
+    ]
+  },
+  "wheels_forged": {
+    "brand": "AegisRim",
+    "line": "Pro Series — Forged",
+    "tagline": "Custom Forged. Built to Order.",
+    "description": "AegisRim Pro Series forged wheels. Full custom specifications — size, offset, PCD, finish. Each set built to order. B2B members receive 45% off AegisRim MSRP.",
+    "certifications": ["JWL", "VIA", "TÜV Rheinland", "IATF 16949"],
+    "lead_time": "8–12 weeks",
+    "moq": 1,
+    "discount_off_msrp": 45,
+    "note": "Pricing is 45% off AegisRim retail MSRP. Custom sizing, offset, and finish available. Minimum 1 set.",
+    "products": [
+      {
+        "id": "ar-forged-monobloc",
+        "name": "Pro Monobloc",
+        "sku": "AR-F-MONO",
+        "construction": "1-piece forged",
+        "finish": ["Gloss Black", "Brushed Titanium", "Custom RAL Color", "Polished"],
+        "sizes": ["18\"–22\"", "Custom offset & width on request"],
+        "pcd": ["Any PCD on request"],
+        "image": "/images/wheels/forged-monobloc.jpg",
+        "msrp_range": "Contact Sales",
+        "stock_status": "order",
+        "featured": true
+      },
+      {
+        "id": "ar-forged-3piece",
+        "name": "Pro 3-Piece",
+        "sku": "AR-F-3PC",
+        "construction": "3-piece forged (center + outer lip + inner barrel)",
+        "finish": ["Custom — any finish, two-tone available"],
+        "sizes": ["19\"–24\"", "Fully custom spec"],
+        "pcd": ["Any PCD on request"],
+        "image": "/images/wheels/forged-3piece.jpg",
+        "msrp_range": "Contact Sales",
+        "stock_status": "order",
+        "featured": true
+      }
+    ]
+  },
+  "tpms": {
+    "description": "TPMS sensors with 7+ years of engineering expertise. Universal compatibility, multi-protocol support, CE/FCC certified.",
+    "brands": [
+      {
+        "id": "nex-tpms",
+        "name": "NEX TPMS",
+        "tagline": "Universal TPMS. Engineered for Professionals.",
+        "description": "NEX TPMS sensors designed for distributors and tire service professionals. Broad vehicle coverage and reliable protocol support.",
+        "certifications": ["CE", "FCC", "RoHS"],
+        "coverage": "95%+ vehicles",
+        "products": [
+          {
+            "id": "nex-u401",
+            "name": "NEX Sensor U401",
+            "sku": "NEX-U401",
+            "type": "Universal Programmable",
+            "frequency": "315MHz / 433MHz",
+            "protocol": "Multi-protocol, auto-detect",
+            "battery": "10-year rated",
+            "coverage": "95%+ vehicles 2002+",
+            "certifications": ["CE", "FCC", "RoHS"],
+            "moq": 50,
+            "stock_status": "in_stock",
+            "image": "/images/tpms/nex-u401.jpg",
+            "featured": true
+          },
+          {
+            "id": "nex-u402-fleet",
+            "name": "NEX Fleet Kit (10 sets)",
+            "sku": "NEX-FLEET-10",
+            "type": "Fleet Pack",
+            "frequency": "315MHz / 433MHz",
+            "protocol": "Multi-protocol",
+            "battery": "10-year rated",
+            "coverage": "95%+ vehicles 2002+",
+            "certifications": ["CE", "FCC", "RoHS"],
+            "moq": 10,
+            "stock_status": "in_stock",
+            "image": "/images/tpms/nex-fleet.jpg",
+            "featured": false
+          }
+        ]
+      },
+      {
+        "id": "pressure-mind",
+        "name": "Pressure Mind",
+        "tagline": "Precision Pressure. Engineered by the MAX Team.",
+        "description": "Engineered by the original MAX sensor R&D team. Decades of TPMS development expertise in a new generation of professional-grade sensors.",
+        "certifications": ["CE", "FCC", "RoHS"],
+        "coverage": "98%+ vehicles",
+        "products": [
+          {
+            "id": "pm-pro-433",
+            "name": "Pressure Mind PRO",
+            "sku": "PM-PRO-433",
+            "type": "Universal Programmable",
+            "frequency": "433MHz",
+            "protocol": "Multi-protocol",
+            "battery": "8-year rated",
+            "coverage": "98%+ vehicles 2005+",
+            "certifications": ["CE", "FCC", "RoHS"],
+            "moq": 50,
+            "stock_status": "contact",
+            "image": "/images/tpms/pm-pro.jpg",
+            "featured": true
+          }
+        ]
+      }
+    ]
+  }
+}

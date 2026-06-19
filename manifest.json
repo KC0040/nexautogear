@@ -1,0 +1,13 @@
+{
+  "name": "NEX AutoGear",
+  "short_name": "NEX",
+  "description": "B2B Wholesale Auto Parts & Wheels",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#e05c1a",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

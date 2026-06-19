@@ -1,0 +1,97 @@
+{
+  "updated": "2026-06-11",
+  "discount_tiers": [
+    { "label": "Single Unit (1 pc)",  "min_qty": 1,  "max_qty": 3,    "off_pct": 30, "note": "No MOQ required" },
+    { "label": "Standard B2B (4+)",   "min_qty": 4,  "max_qty": 99,   "off_pct": 45, "note": "MOQ 4 pcs per order" },
+    { "label": "Volume (100+)",        "min_qty": 100,"max_qty": 999,  "off_pct": 50, "note": "Contact Sales for exact quote" },
+    { "label": "OEM / Large Fleet",    "min_qty": 500,"max_qty": 99999,"off_pct": 0,  "note": "Custom pricing — contact Sales" }
+  ],
+  "member_bonus": {
+    "standard": 0,
+    "silver": 3,
+    "gold": 5
+  },
+  "wheels": {
+    "brand": "AegisRim",
+    "note": "All prices are per wheel (pc). MSRP is suggested US retail. B2B price = MSRP × discount. Final price varies by finish and custom options.",
+    "series": [
+      {
+        "name": "Flow Series",
+        "type": "Cast",
+        "certifications": ["JWL", "VIA"],
+        "sizes": [
+          { "size": "17\"", "msrp": 0, "note": "TBD" },
+          { "size": "18\"", "msrp": 0, "note": "TBD" },
+          { "size": "19\"", "msrp": 0, "note": "TBD" },
+          { "size": "20\"", "msrp": 0, "note": "TBD" }
+        ]
+      },
+      {
+        "name": "Sport Series",
+        "type": "Flow Formed",
+        "certifications": ["JWL", "VIA", "TÜV"],
+        "sizes": [
+          { "size": "18\"", "msrp": 0, "note": "TBD" },
+          { "size": "19\"", "msrp": 0, "note": "TBD" },
+          { "size": "20\"", "msrp": 0, "note": "TBD" },
+          { "size": "21\"", "msrp": 0, "note": "TBD" }
+        ]
+      },
+      {
+        "name": "Pro Series",
+        "type": "Forged",
+        "certifications": ["JWL", "VIA", "TÜV", "IATF 16949"],
+        "sizes": [
+          { "size": "19\"", "msrp": 0, "note": "TBD" },
+          { "size": "20\"", "msrp": 0, "note": "TBD" },
+          { "size": "21\"", "msrp": 0, "note": "TBD" },
+          { "size": "22\"", "msrp": 0, "note": "TBD" }
+        ]
+      }
+    ]
+  },
+  "tpms": {
+    "note": "Per kit / per sensor. MOQ 50 sets for standard orders.",
+    "products": [
+      { "name": "NEX TPMS — Universal Sensor",   "brand": "NEX TPMS",      "msrp": 0, "moq": 50,  "unit": "set", "note": "TBD" },
+      { "name": "NEX TPMS — OEM Replacement",    "brand": "NEX TPMS",      "msrp": 0, "moq": 50,  "unit": "set", "note": "TBD" },
+      { "name": "NEX TPMS — Fleet Kit (10 sets)","brand": "NEX TPMS",      "msrp": 0, "moq": 10,  "unit": "kit", "note": "TBD" },
+      { "name": "Pressure Mind — Standard Kit",  "brand": "Pressure Mind", "msrp": 0, "moq": 100, "unit": "set", "note": "TBD" },
+      { "name": "Pressure Mind — Pro Kit",       "brand": "Pressure Mind", "msrp": 0, "moq": 100, "unit": "set", "note": "TBD" }
+    ]
+  },
+  "web_services": {
+    "note": "NEXAutogear Digital Solutions — Website + AI for automotive businesses. Priority product placement on nexautogear.com included.",
+    "packages": [
+      {
+        "name": "Starter",
+        "price_usd": 500,
+        "billing": "one-time",
+        "includes": [
+          "Professional business website (5 pages)",
+          "AI chatbot integration",
+          "Google Analytics + GTM setup",
+          "SEO / GEO optimization",
+          "Mobile responsive design",
+          "Product listing on NEXAutogear catalog",
+          "3 months support"
+        ]
+      },
+      {
+        "name": "Full Package",
+        "price_usd": 1500,
+        "billing": "one-time + monthly",
+        "includes": [
+          "Everything in Starter",
+          "Social media account setup (FB, IG, LinkedIn)",
+          "AI-driven social media content (30 posts/month)",
+          "Monthly performance report",
+          "WhatsApp / WeChat business integration",
+          "Priority placement — NEXAutogear homepage",
+          "Inventory sync (optional)",
+          "6 months support"
+        ]
+      }
+    ]
+  }
+}

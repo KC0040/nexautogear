@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nexautogear",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8772", "D:\\Claude\\nexautogear"],
+      "port": 8772
+    }
+  ]
+}

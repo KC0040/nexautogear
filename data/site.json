@@ -1,0 +1,46 @@
+{
+  "company": {
+    "name": "NEX AUTO GEAR",
+    "shortName": "NEXAutogear",
+    "tagline": "B2B Wholesale Forged Wheels & TPMS Sensors",
+    "description": "Factory-direct B2B wholesale platform for AegisRim forged wheels and TPMS sensors. Serving distributors, tire shops, and dealers across 60+ countries.",
+    "founded": 2024,
+    "email": {
+      "sales": "Sales@nexautogear.com",
+      "support": "Support@nexautogear.com"
+    },
+    "stats": {
+      "partners": "600+",
+      "countries": "60+",
+      "satisfaction": "4.9/5",
+      "fulfillment": "98.7%",
+      "tpmsExperience": "7+ years"
+    },
+    "social": {},
+    "address": "Taiwan"
+  },
+  "nav": [
+    { "label": "Wheels",  "href": "/#wheels" },
+    { "label": "TPMS",    "href": "/#tpms" },
+    { "label": "Catalog", "href": "/catalog/" },
+    { "label": "Blog",    "href": "/blog/" },
+    { "label": "Support", "href": "/support/" },
+    { "label": "About",   "href": "/about/" }
+  ],
+  "seo": {
+    "defaultTitle": "NEX AUTO GEAR | B2B Wholesale Forged Wheels & TPMS Sensors",
+    "titleTemplate": "%s | NEX AUTO GEAR",
+    "defaultDescription": "Factory-direct B2B wholesale for AegisRim forged wheels and TPMS sensors. Net-30 terms, 60+ countries, 600+ active B2B accounts.",
+    "siteUrl": "https://www.nexautogear.com",
+    "ogImage": "/images/og-default.jpg",
+    "locale": "en_US",
+    "type": "website"
+  },
+  "geo": {
+    "primaryMarkets": ["US", "CA", "AU", "DE", "GB", "FR", "AE", "SG", "JP"],
+    "hreflang": [
+      { "lang": "en", "href": "https://www.nexautogear.com/" },
+      { "lang": "zh-TW", "href": "https://www.nexautogear.com/?lang=zh-TW" }
+    ]
+  }
+}

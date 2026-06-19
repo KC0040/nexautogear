@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /members/
+Disallow: /chat/
+
+Sitemap: https://www.nexautogear.com/sitemap.xml

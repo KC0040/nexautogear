@@ -1,0 +1,849 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — NEXAutogear B2B Portal</title>
+  <meta name="description" content="Register for a NEXAutogear business account to access wholesale pricing on wheels, tires, and TPMS sensors. Factory-direct from China, shipped worldwide." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nexautogear.com/members/register.html" />
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://nexautogear.com/members/register.html" />
+  <link rel="alternate" hreflang="es" href="https://nexautogear.com/es/members/register.html" />
+  <!-- OG -->
+  <meta property="og:title" content="Join NEXAutogear — B2B Wholesale Portal" />
+  <meta property="og:description" content="Factory-direct wheels, tires & TPMS. Create your account to access pricing and place orders." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <style>
+    body { background: var(--bg); }
+
+    .reg-layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+    }
+
+    /* ── Left panel ── */
+    .reg-left {
+      background: linear-gradient(160deg, #0a0e18 0%, #0d1525 50%, #081425 100%);
+      border-right: 1px solid var(--border);
+      padding: calc(var(--nav-h) + 3rem) 4rem 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+      position: sticky; top: 0; height: 100vh; overflow: hidden;
+    }
+    .reg-left-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,209,101,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,209,101,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .reg-left-glow {
+      position: absolute; top: 20%; left: -80px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,100,180,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .reg-left-content { position: relative; z-index: 1; }
+    .reg-brand { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 900; margin-bottom: 2.5rem; }
+    .reg-brand span { color: var(--accent); }
+    .reg-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-weight: 900; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .reg-sub { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem; max-width: 380px; }
+    .reg-perks { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem; }
+    .reg-perk {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+    }
+    .reg-perk-icon {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: rgba(255,209,101,0.08); border: 1px solid rgba(255,209,101,0.12);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .reg-perk-title { font-weight: 700; font-size: 0.875rem; margin-bottom: 0.15rem; }
+    .reg-perk-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .reg-markets {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      padding-top: 1.5rem; border-top: 1px solid var(--border);
+    }
+    .market-flag {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.3rem 0.7rem;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 6px; font-size: 0.78rem; color: var(--muted);
+    }
+
+    /* ── Right panel (form) ── */
+    .reg-right {
+      background: var(--bg2);
+      padding: calc(var(--nav-h) + 2rem) 2.5rem 2.5rem;
+      overflow-y: auto; max-height: 100vh;
+    }
+    .reg-right-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.35rem; }
+    .reg-right-sub { font-size: 0.875rem; color: var(--muted); margin-bottom: 2rem; }
+    .reg-right-sub a { color: var(--accent); }
+
+    /* ── Form sections ── */
+    .form-section {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .form-section-title {
+      font-size: 0.8rem; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .form-row { display: flex; gap: 0.75rem; }
+    .form-row > * { flex: 1; }
+
+    /* ── Business type cards ── */
+    .btype-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .btype-card {
+      border: 1px solid var(--border2); border-radius: 9px;
+      padding: 0.75rem; cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: flex-start; gap: 0.6rem;
+    }
+    .btype-card:hover { border-color: rgba(255,209,101,0.28); background: rgba(255,209,101,0.03); }
+    .btype-card.selected { border-color: var(--accent); background: rgba(255,209,101,0.06); }
+    .btype-card input { display: none; }
+    .btype-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .btype-name { font-size: 0.8rem; font-weight: 700; }
+    .btype-desc { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+
+    /* ── Market checkboxes ── */
+    .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .market-check {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      cursor: pointer; transition: all 0.2s; font-size: 0.82rem;
+    }
+    .market-check:hover { border-color: rgba(255,209,101,0.18); }
+    .market-check input { accent-color: var(--accent); }
+    .market-check.checked { border-color: rgba(255,209,101,0.28); background: rgba(255,209,101,0.04); }
+
+    /* ── Products checkboxes ── */
+    .product-check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .product-check {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border); border-radius: 9px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .product-check:hover { border-color: rgba(255,209,101,0.25); }
+    .product-check input { accent-color: var(--accent); }
+    .product-check.checked { border-color: var(--accent); background: rgba(255,209,101,0.05); }
+    .product-check-icon { font-size: 1rem; }
+    .product-check-name { font-size: 0.82rem; font-weight: 600; }
+
+    /* ── Enterprise CTA ── */
+    .enterprise-bar {
+      background: linear-gradient(135deg, rgba(173,221,255,0.06), rgba(255,209,101,0.04));
+      border: 1px solid rgba(173,221,255,0.15);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;
+    }
+    .enterprise-bar-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .enterprise-bar-title { font-weight: 700; font-size: 0.875rem; margin-bottom: 0.15rem; }
+    .enterprise-bar-desc { font-size: 0.78rem; color: var(--muted); }
+    .enterprise-bar a { color: var(--blue); font-weight: 600; }
+
+    /* ── Submit ── */
+    .reg-submit-area { margin-top: 1.25rem; }
+    .reg-terms { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+    .reg-terms a { color: var(--accent); }
+
+    /* ── Social login ── */
+    .social-login { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .social-btn-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border2);
+      border-radius: 9px; cursor: pointer; font-size: 0.875rem; font-weight: 500;
+      transition: all 0.2s;
+    }
+    .social-btn-item:hover { background: rgba(255,255,255,0.07); border-color: var(--border2); }
+
+    /* ── Progress bar ── */
+    .reg-progress {
+      height: 3px; background: var(--border);
+      border-radius: 99px; margin-bottom: 1.75rem; overflow: hidden;
+    }
+    .reg-progress-fill {
+      height: 100%; background: var(--accent);
+      border-radius: 99px; transition: width 0.4s ease;
+    }
+
+    @media (max-width: 900px) {
+      .reg-layout { grid-template-columns: 1fr; }
+      .reg-left { position: static; height: auto; padding: calc(var(--nav-h) + 2rem) 1.5rem 2rem; }
+      .reg-right { padding: 2rem 1.5rem 3rem; max-height: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">NEX<span>AUTO</span>GEAR</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#wheels">Wheels</a></li>
+    <li><a href="../index.html#tires">Tires</a></li>
+    <li><a href="../index.html#tpms">TPMS</a></li>
+    <li><a href="../catalog/index.html">Catalog</a></li>
+    <li><a href="../index.html#support">Support</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="login.html" class="btn btn-ghost btn-sm">Sign In</a>
+    <a href="register.html" class="btn btn-primary btn-sm">Create Account</a>
+  </div>
+</nav>
+
+<div class="reg-layout page-wrap">
+
+  <!-- ── Left: Brand Panel ── -->
+  <div class="reg-left">
+    <div class="reg-left-grid"></div>
+    <div class="reg-left-glow"></div>
+    <div class="reg-left-content">
+      <div class="reg-brand">NEX<span>AUTO</span>GEAR</div>
+      <h1 class="reg-headline">Factory-Direct.<br/><span class="text-accent">No Middlemen.</span></h1>
+      <p class="reg-sub">Join thousands of auto businesses sourcing premium wheels, performance tires, and intelligent TPMS sensors — shipped directly from our China facility to your door.</p>
+
+      <div class="reg-perks">
+        <div class="reg-perk">
+          <div class="reg-perk-icon">⬡</div>
+          <div>
+            <div class="reg-perk-title">Full Product Catalog Access</div>
+            <div class="reg-perk-desc">500+ wheel designs, 70+ tire brands, and the complete NEX TPMS line — with real-time inventory and pricing.</div>
+          </div>
+        </div>
+        <div class="reg-perk">
+          <div class="reg-perk-icon">📦</div>
+          <div>
+            <div class="reg-perk-title">Direct Factory Pricing</div>
+            <div class="reg-perk-desc">No distributor markup. Order as few as 1 set or as many as 1,000 — same factory-direct rate.</div>
+          </div>
+        </div>
+        <div class="reg-perk">
+          <div class="reg-perk-icon">📄</div>
+          <div>
+            <div class="reg-perk-title">Downloadable Spec Sheets</div>
+            <div class="reg-perk-desc">Full technical documentation, certifications, and product PDFs — yours to share with your customers.</div>
+          </div>
+        </div>
+        <div class="reg-perk">
+          <div class="reg-perk-icon">💬</div>
+          <div>
+            <div class="reg-perk-title">Dedicated Support Line</div>
+            <div class="reg-perk-desc">Live chat, email, and WhatsApp support in EN / ES / ZH. Real specialists, not chatbots.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:0.75rem; color:var(--muted); margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:0.1em;">Ships to</div>
+        <div class="reg-markets">
+          <div class="market-flag">🇺🇸 USA</div>
+          <div class="market-flag">🇨🇦 Canada</div>
+          <div class="market-flag">🇲🇽 Mexico</div>
+          <div class="market-flag">🇧🇷 Brazil</div>
+          <div class="market-flag">🇬🇧 UK</div>
+          <div class="market-flag">🇩🇪 Germany</div>
+          <div class="market-flag">🇦🇪 UAE</div>
+          <div class="market-flag">🌍 +80 countries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Right: Form Panel ── -->
+  <div class="reg-right">
+    <div class="reg-right-title">Create Your Account</div>
+    <div class="reg-right-sub">Already have an account? <a href="login.html">Sign in here</a></div>
+
+    <!-- Progress -->
+    <div class="reg-progress"><div class="reg-progress-fill" id="progressFill" style="width:33%"></div></div>
+
+    <!-- Step indicator -->
+    <div class="steps" id="stepIndicator">
+      <div class="step active" id="step-ind-1">
+        <div class="step-num">1</div>
+        <div class="step-label">Company</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step-ind-2">
+        <div class="step-num">2</div>
+        <div class="step-label">Contact</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step-ind-3">
+        <div class="step-num">3</div>
+        <div class="step-label">Purchasing</div>
+      </div>
+    </div>
+
+    <form id="regForm" novalidate>
+
+      <!-- ══ STEP 1: Company Info ══ -->
+      <div id="formStep1">
+
+        <!-- Business Type -->
+        <div class="form-section">
+          <div class="form-section-title">🏢 Business Type <span class="req" style="color:var(--danger)">*</span></div>
+          <div class="btype-grid" id="btypeGrid">
+            <label class="btype-card" onclick="selectBtype(this,'Tire Shop')">
+              <input type="radio" name="btype" value="Tire Shop"/>
+              <div class="btype-icon">🔧</div>
+              <div><div class="btype-name">Tire Shop</div><div class="btype-desc">Independent or chain tire service center</div></div>
+            </label>
+            <label class="btype-card" onclick="selectBtype(this,'Auto Dealer')">
+              <input type="radio" name="btype" value="Auto Dealer"/>
+              <div class="btype-icon">🚗</div>
+              <div><div class="btype-name">Auto Dealer</div><div class="btype-desc">New or used vehicle dealership</div></div>
+            </label>
+            <label class="btype-card" onclick="selectBtype(this,'Distributor')">
+              <input type="radio" name="btype" value="Distributor"/>
+              <div class="btype-icon">📦</div>
+              <div><div class="btype-name">Distributor</div><div class="btype-desc">Wholesale parts distributor or importer</div></div>
+            </label>
+            <label class="btype-card" onclick="selectBtype(this,'Online Retailer')">
+              <input type="radio" name="btype" value="Online Retailer"/>
+              <div class="btype-icon">🛒</div>
+              <div><div class="btype-name">Online Retailer</div><div class="btype-desc">E-commerce / marketplace seller</div></div>
+            </label>
+            <label class="btype-card" onclick="selectBtype(this,'Fleet / Corporate')">
+              <input type="radio" name="btype" value="Fleet / Corporate"/>
+              <div class="btype-icon">🚛</div>
+              <div><div class="btype-name">Fleet / Corporate</div><div class="btype-desc">Company vehicle fleet management</div></div>
+            </label>
+            <label class="btype-card" onclick="selectBtype(this,'Other')">
+              <input type="radio" name="btype" value="Other"/>
+              <div class="btype-icon">⚙️</div>
+              <div><div class="btype-name">Other</div><div class="btype-desc">Auto shop, garage, or other</div></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Company Details -->
+        <div class="form-section">
+          <div class="form-section-title">📋 Company Details</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-group">
+              <label class="form-label">Company / Business Name <span class="req">*</span></label>
+              <input type="text" class="form-input" id="companyName" placeholder="e.g. Mesa Tire & Wheel Inc." required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Tax ID / EIN / RFC <span class="req">*</span></label>
+                <input type="text" class="form-input" id="taxId" placeholder="e.g. 12-3456789" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Year Established</label>
+                <input type="number" class="form-input" id="yearEst" placeholder="e.g. 2010" min="1900" max="2026" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">No. of Employees</label>
+                <select class="form-select" id="employees">
+                  <option value="">Select range</option>
+                  <option>1 – 5</option>
+                  <option>6 – 20</option>
+                  <option>21 – 100</option>
+                  <option>100+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">No. of Locations</label>
+                <select class="form-select" id="locations">
+                  <option value="">Select</option>
+                  <option>1</option>
+                  <option>2 – 5</option>
+                  <option>6 – 20</option>
+                  <option>20+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Business Website</label>
+              <input type="url" class="form-input" id="website" placeholder="https://yourcompany.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Markets -->
+        <div class="form-section">
+          <div class="form-section-title">🌎 Primary Market(s) <span class="req">*</span></div>
+          <div class="market-grid" id="marketGrid">
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="USA"/> 🇺🇸 United States</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Canada"/> 🇨🇦 Canada</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Mexico"/> 🇲🇽 Mexico</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Brazil"/> 🇧🇷 Brazil</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Other Latin America"/> 🌎 Other LatAm</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="UK"/> 🇬🇧 United Kingdom</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Europe"/> 🇪🇺 Europe</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Middle East"/> 🇦🇪 Middle East</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Asia Pacific"/> 🌏 Asia Pacific</label>
+            <label class="market-check" onclick="toggleMarket(this)"><input type="checkbox" value="Other"/> 🌍 Other</label>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-full btn-lg" onclick="goStep(2)">Continue — Contact Info →</button>
+      </div>
+
+      <!-- ══ STEP 2: Contact Info ══ -->
+      <div id="formStep2" style="display:none;">
+
+        <!-- Login credentials -->
+        <div class="form-section">
+          <div class="form-section-title">🔐 Login Credentials</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-group">
+              <label class="form-label">Business Email <span class="req">*</span></label>
+              <input type="email" class="form-input" id="email" placeholder="you@company.com" required />
+              <span class="form-hint">This will be your login username</span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Password <span class="req">*</span></label>
+                <input type="password" class="form-input" id="password" placeholder="Min. 8 characters" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Confirm Password <span class="req">*</span></label>
+                <input type="password" class="form-input" id="passwordConfirm" placeholder="Repeat password" required />
+              </div>
+            </div>
+            <div id="pwStrength" style="display:none;">
+              <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.3rem;">Password strength</div>
+              <div style="height:4px;background:var(--border);border-radius:99px;overflow:hidden;">
+                <div id="pwBar" style="height:100%;border-radius:99px;transition:all 0.3s;width:0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary contact -->
+        <div class="form-section">
+          <div class="form-section-title">👤 Primary Contact Person</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name <span class="req">*</span></label>
+                <input type="text" class="form-input" id="firstName" placeholder="First" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name <span class="req">*</span></label>
+                <input type="text" class="form-input" id="lastName" placeholder="Last" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Job Title <span class="req">*</span></label>
+              <input type="text" class="form-input" id="jobTitle" placeholder="e.g. Purchasing Manager, Owner" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number <span class="req">*</span></label>
+              <div class="phone-input-wrap">
+                <select class="form-select phone-code" id="phoneCode" style="width:auto;min-width:90px;border-radius:9px 0 0 9px;">
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+1-CA">🇨🇦 +1</option>
+                  <option value="+52">🇲🇽 +52</option>
+                  <option value="+55">🇧🇷 +55</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+971">🇦🇪 +971</option>
+                  <option value="+886">🇹🇼 +886</option>
+                  <option value="other">Other</option>
+                </select>
+                <input type="tel" class="form-input" id="phone" placeholder="(555) 000-0000" required />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Messaging -->
+        <div class="form-section">
+          <div class="form-section-title">💬 Preferred Contact Method</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-group">
+              <div class="checkbox-group" style="flex-direction:row;flex-wrap:wrap;gap:0.6rem;">
+                <label class="product-check" onclick="toggleProductCheck(this)" style="flex:1;min-width:100px;">
+                  <input type="radio" name="contactMethod" value="Email" /> <div class="product-check-icon">✉️</div><div class="product-check-name">Email</div>
+                </label>
+                <label class="product-check" onclick="toggleProductCheck(this)" style="flex:1;min-width:100px;">
+                  <input type="radio" name="contactMethod" value="WhatsApp" /> <div class="product-check-icon">💬</div><div class="product-check-name">WhatsApp</div>
+                </label>
+                <label class="product-check" onclick="toggleProductCheck(this)" style="flex:1;min-width:100px;">
+                  <input type="radio" name="contactMethod" value="Phone" /> <div class="product-check-icon">📞</div><div class="product-check-name">Phone</div>
+                </label>
+                <label class="product-check" onclick="toggleProductCheck(this)" style="flex:1;min-width:100px;">
+                  <input type="radio" name="contactMethod" value="WeChat" /> <div class="product-check-icon">🟢</div><div class="product-check-name">WeChat</div>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">WhatsApp / WeChat / LINE ID</label>
+              <input type="text" class="form-input" id="messenger" placeholder="Your handle or number" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Language</label>
+              <select class="form-select" id="prefLang">
+                <option value="en">🇺🇸 English</option>
+                <option value="es">🇲🇽 Español</option>
+                <option value="zh">🇹🇼 中文</option>
+                <option value="ar">🇦🇪 العربية</option>
+                <option value="pt">🇧🇷 Português</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:0.75rem;">
+          <button type="button" class="btn btn-ghost btn-lg" style="flex:1" onclick="goStep(1)">← Back</button>
+          <button type="button" class="btn btn-primary btn-lg" style="flex:2" onclick="goStep(3)">Continue — Purchasing →</button>
+        </div>
+      </div>
+
+      <!-- ══ STEP 3: Purchasing Info ══ -->
+      <div id="formStep3" style="display:none;">
+
+        <!-- Products of interest -->
+        <div class="form-section">
+          <div class="form-section-title">🛒 Products of Interest <span class="req">*</span></div>
+          <div class="product-check-grid" id="productGrid">
+            <label class="product-check" onclick="toggleProductCheck(this)">
+              <input type="checkbox" value="Wheels" /> <div class="product-check-icon">⬡</div><div class="product-check-name">Wheels & Rims</div>
+            </label>
+            <label class="product-check" onclick="toggleProductCheck(this)">
+              <input type="checkbox" value="Tires" /> <div class="product-check-icon">◎</div><div class="product-check-name">Tires</div>
+            </label>
+            <label class="product-check" onclick="toggleProductCheck(this)">
+              <input type="checkbox" value="TPMS" /> <div class="product-check-icon">📡</div><div class="product-check-name">TPMS Sensors</div>
+            </label>
+            <label class="product-check" onclick="toggleProductCheck(this)">
+              <input type="checkbox" value="All" /> <div class="product-check-icon">✦</div><div class="product-check-name">All Products</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Order volume -->
+        <div class="form-section">
+          <div class="form-section-title">📊 Purchasing Volume</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-group">
+              <label class="form-label">Estimated Monthly Budget (USD)</label>
+              <select class="form-select" id="budget">
+                <option value="">Prefer not to say</option>
+                <option value="under1k">Under $1,000</option>
+                <option value="1k-5k">$1,000 – $5,000</option>
+                <option value="5k-20k">$5,000 – $20,000</option>
+                <option value="20k-50k">$20,000 – $50,000</option>
+                <option value="50k+">$50,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Typical Order Frequency</label>
+              <select class="form-select" id="frequency">
+                <option value="">Select</option>
+                <option>One-time / As needed</option>
+                <option>Weekly</option>
+                <option>Monthly</option>
+                <option>Quarterly</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Current Supplier(s)</label>
+              <input type="text" class="form-input" id="supplier" placeholder="e.g. TSW, TireHub, local importer (optional)" />
+              <span class="form-hint">Helps us understand your needs — optional</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- How did you hear -->
+        <div class="form-section">
+          <div class="form-section-title">📣 How Did You Find Us?</div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div class="form-group">
+              <select class="form-select" id="referral">
+                <option value="">Select one</option>
+                <option>Google / Search</option>
+                <option>AegisRim.com (sister brand)</option>
+                <option>Referral from another business</option>
+                <option>Trade Show / Exhibition</option>
+                <option>Social Media (Facebook / Instagram)</option>
+                <option>LinkedIn</option>
+                <option>Industry Forum / Community</option>
+                <option>Email Campaign</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Additional Notes</label>
+              <textarea class="form-textarea" id="notes" placeholder="Anything else you'd like us to know before we review your account…"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload company doc -->
+        <div class="form-section">
+          <div class="form-section-title">📎 Business Verification <span class="badge badge-gray" style="font-size:0.68rem;">Optional — speeds up approval</span></div>
+          <div id="dropzone" style="
+            border: 2px dashed var(--border2); border-radius: var(--radius);
+            padding: 1.5rem; text-align: center; cursor: pointer;
+            transition: all 0.2s; color: var(--muted); font-size: 0.85rem;
+          " onmouseenter="this.style.borderColor='rgba(255,209,101,0.28)'" onmouseleave="this.style.borderColor=''" onclick="document.getElementById('fileInput').click()">
+            <div style="font-size:1.5rem;margin-bottom:0.4rem;">📄</div>
+            <div style="font-weight:600;color:var(--text);margin-bottom:0.25rem;">Upload Business License / Tax Certificate</div>
+            <div>PDF, JPG, or PNG · Max 10 MB</div>
+            <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" style="display:none" onchange="handleFile(this)" />
+          </div>
+          <div id="filePreview" style="display:none; margin-top:0.5rem; padding:0.6rem 0.85rem; background:rgba(255,209,101,0.05); border:1px solid rgba(255,209,101,0.12); border-radius:8px; font-size:0.82rem; display:none; align-items:center; gap:0.5rem;">
+            <span>📄</span><span id="fileName"></span>
+            <button type="button" onclick="clearFile()" style="margin-left:auto;background:none;border:none;color:var(--danger);cursor:pointer;font-size:0.85rem;">✕</button>
+          </div>
+        </div>
+
+        <!-- Enterprise bar -->
+        <div class="enterprise-bar">
+          <div class="enterprise-bar-icon">🏢</div>
+          <div style="flex:1;">
+            <div class="enterprise-bar-title">Chain Store or Large Volume Account?</div>
+            <div class="enterprise-bar-desc">Skip the standard form — <a href="#" onclick="openEnterpriseModal()">contact our enterprise team directly</a> for custom pricing and dedicated account management.</div>
+          </div>
+        </div>
+
+        <!-- Terms & Submit -->
+        <div class="reg-submit-area">
+          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1rem;">
+            <label class="checkbox-item">
+              <input type="checkbox" id="agreeTerms" />
+              <span class="checkbox-label">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> <span class="req">*</span></span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="agreeAge" />
+              <span class="checkbox-label">I confirm this account represents a legitimate business entity <span class="req">*</span></span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="agreeMarketing" checked />
+              <span class="checkbox-label">Send me new product launches, promotions, and catalog updates</span>
+            </label>
+          </div>
+
+          <div style="display:flex;gap:0.75rem;">
+            <button type="button" class="btn btn-ghost btn-lg" style="flex:1" onclick="goStep(2)">← Back</button>
+            <button type="submit" class="btn btn-primary btn-lg" style="flex:2" id="submitBtn">
+              Create My Account ✓
+            </button>
+          </div>
+
+          <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.85rem;">
+            Your account is reviewed within 1 business day. You'll receive an email confirmation at the address you provided.
+          </p>
+        </div>
+
+      </div><!-- end step 3 -->
+
+    </form><!-- end form -->
+
+    <!-- Success state (hidden) -->
+    <div id="regSuccess" style="display:none; text-align:center; padding:2rem 1rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">✅</div>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:0.5rem;">Account Created!</h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6;">
+        We've sent a confirmation email. Our team will review your account within 1 business day — you'll be notified as soon as you're approved to place orders.
+      </p>
+      <div style="background:rgba(255,209,101,0.05);border:1px solid rgba(255,209,101,0.12);border-radius:var(--radius);padding:1rem;margin-bottom:1.5rem;text-align:left;">
+        <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.4rem;">While you wait, you can:</div>
+        <ul style="font-size:0.875rem;list-style:none;display:flex;flex-direction:column;gap:0.4rem;">
+          <li>→ <a href="../catalog/index.html" style="color:var(--accent);">Browse the product catalog</a></li>
+          <li>→ <a href="../index.html#tpms" style="color:var(--accent);">Explore TPMS sensors</a></li>
+          <li>→ <a href="../index.html#support" style="color:var(--accent);">Chat with our support team</a></li>
+        </ul>
+      </div>
+      <a href="login.html" class="btn btn-primary btn-lg btn-full">Go to Sign In →</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Live support fab -->
+<button class="support-fab" onclick="alert('Opening support chat…')">
+  💬 <div class="support-fab-badge">1</div>
+</button>
+
+<!-- Toast container -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+  let currentStep = 1;
+
+  function goStep(step) {
+    // Basic validation before advancing
+    if (step > currentStep) {
+      if (currentStep === 1) {
+        const btype = document.querySelector('input[name="btype"]:checked');
+        const company = document.getElementById('companyName').value.trim();
+        const taxId = document.getElementById('taxId').value.trim();
+        const markets = document.querySelectorAll('#marketGrid input:checked');
+        if (!btype) { showToast('Please select a business type', 'error'); return; }
+        if (!company) { showToast('Company name is required', 'error'); document.getElementById('companyName').focus(); return; }
+        if (!taxId) { showToast('Tax ID is required', 'error'); document.getElementById('taxId').focus(); return; }
+        if (markets.length === 0) { showToast('Select at least one primary market', 'error'); return; }
+      }
+      if (currentStep === 2) {
+        const email = document.getElementById('email').value.trim();
+        const pw = document.getElementById('password').value;
+        const pw2 = document.getElementById('passwordConfirm').value;
+        const fname = document.getElementById('firstName').value.trim();
+        const lname = document.getElementById('lastName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        if (!email || !email.includes('@')) { showToast('Valid email required', 'error'); return; }
+        if (pw.length < 8) { showToast('Password must be at least 8 characters', 'error'); return; }
+        if (pw !== pw2) { showToast('Passwords do not match', 'error'); return; }
+        if (!fname || !lname) { showToast('Full name required', 'error'); return; }
+        if (!phone) { showToast('Phone number required', 'error'); return; }
+      }
+    }
+
+    document.getElementById('formStep' + currentStep).style.display = 'none';
+    document.getElementById('formStep' + step).style.display = 'block';
+
+    // Update step indicators
+    for (let i = 1; i <= 3; i++) {
+      const ind = document.getElementById('step-ind-' + i);
+      ind.classList.remove('active', 'done');
+      if (i < step) ind.classList.add('done');
+      if (i === step) ind.classList.add('active');
+    }
+
+    // Mark done checkmarks
+    document.querySelectorAll('.step.done .step-num').forEach((el, idx) => {
+      el.textContent = '✓';
+    });
+
+    currentStep = step;
+    const pct = step === 1 ? 33 : step === 2 ? 66 : 90;
+    document.getElementById('progressFill').style.width = pct + '%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function selectBtype(card, value) {
+    document.querySelectorAll('.btype-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+  }
+
+  function toggleMarket(el) {
+    const cb = el.querySelector('input[type="checkbox"]');
+    setTimeout(() => {
+      el.classList.toggle('checked', cb.checked);
+    }, 0);
+  }
+
+  function toggleProductCheck(el) {
+    const inp = el.querySelector('input');
+    setTimeout(() => {
+      el.classList.toggle('checked', inp.checked || inp.type === 'radio');
+      if (inp.type === 'radio') {
+        el.closest('.checkbox-group, div').querySelectorAll('.product-check').forEach(pc => {
+          const r = pc.querySelector('input[type="radio"]');
+          if (r && r !== inp) pc.classList.remove('checked');
+        });
+      }
+    }, 0);
+  }
+
+  // Password strength
+  document.getElementById('password').addEventListener('input', function() {
+    const v = this.value;
+    const wrap = document.getElementById('pwStrength');
+    const bar = document.getElementById('pwBar');
+    wrap.style.display = v.length ? 'block' : 'none';
+    let score = 0;
+    if (v.length >= 8) score++;
+    if (/[A-Z]/.test(v)) score++;
+    if (/[0-9]/.test(v)) score++;
+    if (/[^A-Za-z0-9]/.test(v)) score++;
+    const colors = ['#ff4757', '#ffa502', '#f5c842', '#2ed573'];
+    const widths = ['25%', '50%', '75%', '100%'];
+    bar.style.background = colors[score - 1] || '#ff4757';
+    bar.style.width = widths[score - 1] || '10%';
+  });
+
+  // File upload
+  function handleFile(input) {
+    const file = input.files[0];
+    if (!file) return;
+    document.getElementById('fileName').textContent = file.name;
+    document.getElementById('filePreview').style.display = 'flex';
+  }
+  function clearFile() {
+    document.getElementById('fileInput').value = '';
+    document.getElementById('filePreview').style.display = 'none';
+  }
+
+  // Enterprise modal placeholder
+  function openEnterpriseModal() {
+    showToast('Enterprise inquiry form opening…', 'info');
+  }
+
+  // Form submit
+  document.getElementById('regForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!document.getElementById('agreeTerms').checked) {
+      showToast('Please agree to the Terms of Service', 'error'); return;
+    }
+    if (!document.getElementById('agreeAge').checked) {
+      showToast('Please confirm your business entity', 'error'); return;
+    }
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Creating account…';
+    document.getElementById('progressFill').style.width = '100%';
+    setTimeout(() => {
+      document.getElementById('regForm').style.display = 'none';
+      document.getElementById('regSuccess').style.display = 'block';
+      document.getElementById('stepIndicator').style.display = 'none';
+      document.querySelector('.reg-progress').style.display = 'none';
+      document.querySelector('.reg-right-title').textContent = 'Welcome to NEXAutogear!';
+      document.querySelector('.reg-right-sub').style.display = 'none';
+    }, 1200);
+  });
+
+  // Toast
+  function showToast(msg, type = 'info') {
+    const wrap = document.getElementById('toastWrap');
+    const t = document.createElement('div');
+    t.className = 'toast ' + type;
+    const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+    t.innerHTML = `<span>${icons[type]}</span><span class="toast-text">${msg}</span>`;
+    wrap.appendChild(t);
+    setTimeout(() => t.remove(), 3800);
+  }
+</script>
+  <script>window.NEX_CHAT = { endpoint: 'https://new2-chatbotservice.pkxdtf.easypanel.host/chat' };</script>
+  <script src="/js/widget.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2d7d92d6a95f1c2c58ca23/1jr0r50oo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
+
