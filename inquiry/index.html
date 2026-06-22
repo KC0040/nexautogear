@@ -230,9 +230,12 @@ document.getElementById('inquiryForm').addEventListener('submit', async function
   btn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">progress_activity</span> Sending...';
 
   try {
-    const res = await fetch('/send-inquiry.php', {
+    const fd = new FormData(this);
+    const payload = { site: 'NEX Autogear', name: fd.get('name') || fd.get('fullName'), email: fd.get('email'), phone: fd.get('phone'), business: fd.get('company') || fd.get('businessName'), industry: fd.get('industry') || 'B2B Wholesale', message: fd.get('message') || fd.get('inquiry') };
+    const res = await fetch('https://ach-n8n.pkxdtf.easypanel.host/webhook/contact-form', {
       method: 'POST',
-      body: new FormData(this)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
     const data = await res.json();
     if (data.success) {
