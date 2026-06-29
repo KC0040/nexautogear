@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign In — NEXAutogear B2B Portal</title>
+  <title>Sign In � NEXAutogear B2B Portal</title>
   <meta name="description" content="Sign in to your NEXAutogear B2B account to access wholesale pricing, product catalogs, and order management." />
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/base.css" />
@@ -113,168 +113,14 @@
     @keyframes spin { to { transform: rotate(360deg); } }
   </style>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCMRTRPQFC"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GCMRTRPQFC');
-  </script>
-</head>
-<body>
-
-<!-- Nav -->
-<nav class="nav">
-  <a href="../index.html" class="nav-logo">NEX<span>AUTO</span>GEAR</a>
-  <ul class="nav-links">
-    <li><a href="../index.html#wheels">Wheels</a></li>
-    <li><a href="../index.html#tires">Tires</a></li>
-    <li><a href="../index.html#tpms">TPMS</a></li>
-    <li><a href="../catalog/index.html">Catalog</a></li>
-    <li><a href="../index.html#support">Support</a></li>
-  </ul>
-  <div class="nav-actions">
-    <a href="login.html" class="btn btn-ghost btn-sm">Sign In</a>
-    <a href="register.html" class="btn btn-primary btn-sm">Create Account</a>
-  </div>
-</nav>
-
-<div class="login-grid-bg"></div>
-
-<div class="login-wrap">
-  <div class="login-card">
-
-    <!-- Logo -->
-    <div class="login-logo">
-      NEX<span>AUTO</span>GEAR
-      <div class="login-logo-sub">B2B PORTAL</div>
-    </div>
-
-    <!-- Live status -->
-    <div class="status-banner">
-      <div class="dot-live"></div>
-      <div>Support team online — <strong>3 agents available</strong> right now</div>
-    </div>
-
-    <div class="login-title">Welcome back</div>
-    <div class="login-sub">Don't have an account? <a href="register.html">Create one free →</a></div>
-
-    <form class="login-form" id="loginForm" novalidate>
-
-      <!-- Email -->
-      <div class="form-group">
-        <label class="form-label">Business Email</label>
-        <div class="input-icon-wrap">
-          <span class="input-icon" style="font-family:'Space Grotesk';font-size:0.72rem;font-weight:700;">@</span>
-          <input type="email" class="form-input" id="loginEmail" placeholder="you@company.com" required autocomplete="email" />
-        </div>
-      </div>
-
-      <!-- Password -->
-      <div class="form-group">
-        <label class="form-label">Password</label>
-        <div class="input-icon-wrap">
-          <span class="input-icon" style="font-family:'Space Grotesk';font-size:0.72rem;font-weight:700;">PW</span>
-          <input type="password" class="form-input" id="loginPw" placeholder="Your password" required autocomplete="current-password" />
-          <button type="button" class="pw-toggle" id="pwToggle" onclick="togglePw()" style="font-family:'Space Grotesk';font-size:0.68rem;font-weight:700;">SHOW</button>
-        </div>
-      </div>
-
-      <!-- Remember / Forgot -->
-      <div class="login-footer">
-        <label class="remember">
-          <input type="checkbox" id="rememberMe" checked />
-          Remember me
-        </label>
-        <a href="forgot-password.html">Forgot password?</a>
-      </div>
-
-      <!-- Submit -->
-      <button type="submit" class="btn btn-primary btn-full btn-lg" id="loginBtn" style="margin-top:0.25rem;">
-        <div class="spinner" id="loginSpinner"></div>
-        Sign In to Portal
-      </button>
-
-    </form>
-
-    <!-- Divider -->
-    <div class="login-divider" style="margin-top:1.25rem;">or continue with</div>
-    <div class="alt-logins">
-      <div class="alt-login-btn">Google</div>
-      <div class="alt-login-btn">LinkedIn</div>
-    </div>
-
-    <!-- Enterprise note -->
-    <div class="enterprise-note">
-      Large account or chain store? <a href="mailto:Sales@nexautogear.com">Contact our enterprise team →</a>
-    </div>
-
-    <!-- Register CTA -->
-    <div class="login-register-cta">
-      New to NEXAutogear? <a href="register.html">Create a free account</a> and get access to factory-direct pricing on wheels, tires & TPMS.
-    </div>
-
-  </div>
-</div>
-
-<!-- Support FAB -->
-<button class="support-fab" onclick="alert('Opening support chat…')">
-  &#128172; <div class="support-fab-badge">1</div>
-</button>
-
-<!-- Toast -->
-<div class="toast-wrap" id="toastWrap"></div>
-
-<script>
-  function togglePw() {
-    const input = document.getElementById('loginPw');
-    input.type = input.type === 'password' ? 'text' : 'password';
-  }
-
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value.trim();
-    const pw = document.getElementById('loginPw').value;
-    if (!email || !email.includes('@')) { showToast('Enter a valid email', 'error'); return; }
-    if (!pw) { showToast('Password required', 'error'); return; }
-
-    const btn = document.getElementById('loginBtn');
-    const spinner = document.getElementById('loginSpinner');
-    btn.disabled = true;
-    spinner.style.display = 'block';
-    btn.childNodes[btn.childNodes.length - 1].textContent = ' Signing in…';
-
-    setTimeout(() => {
-      // Simulate redirect to dashboard
-      showToast('Welcome back! Redirecting…', 'success');
-      setTimeout(() => { window.location.href = 'dashboard.html'; }, 1000);
-    }, 1400);
-  });
-
-  function showToast(msg, type = 'info') {
-    const wrap = document.getElementById('toastWrap');
-    const t = document.createElement('div');
-    t.className = 'toast ' + type;
-    const icons = { success: '&#10003;', error: '&#10007;', info: '&#8505;' };
-    t.innerHTML = `<span>${icons[type]}</span><span class="toast-text">${msg}</span>`;
-    wrap.appendChild(t);
-    setTimeout(() => t.remove(), 3500);
-  }
-</script>
-  <script>window.NEX_CHAT = { endpoint: 'https://new2-chatbotservice.pkxdtf.easypanel.host/chat' };</script>
-  <script src="/js/widget.js" defer></script>
-  <script src="/js/i18n.js" defer></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2d7d92d6a95f1c2c58ca23/1jr0r50oo';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  (function(d,t){
+    var BASE_URL="https://chatwoot-chatwoot.pkxdtf.easypanel.host";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";g.defer=true;g.async=true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){window.chatwootSDK.run({websiteToken:"X33dWaJDUB71P4S3qn8uce4T",baseUrl:BASE_URL});}
+  })(document,"script");
 </script>
 <!--End of Tawk.to Script-->
 </body>

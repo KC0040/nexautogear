@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sales Assistant — NEXAutogear</title>
+  <title>Sales Assistant � NEXAutogear</title>
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/base.css" />
   <style>
@@ -14,7 +14,7 @@
       padding-top: var(--nav-h);
     }
 
-    /* ── Left panel: agent profile ── */
+    /* -- Left panel: agent profile -- */
     .agent-panel {
       width: 260px; flex-shrink: 0;
       background: var(--bg2); border-right: 1px solid var(--border);
@@ -71,7 +71,7 @@
     .fact-key { color: var(--muted); }
     .fact-val { font-weight: 600; }
 
-    /* ── Main chat area ── */
+    /* -- Main chat area -- */
     .chat-main {
       flex: 1; display: flex; flex-direction: column; overflow: hidden;
       background: var(--bg);
@@ -213,326 +213,14 @@
     }
   </style>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCMRTRPQFC"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GCMRTRPQFC');
-  </script>
-</head>
-<body>
-
-<!-- Nav -->
-<nav class="nav">
-  <a href="../index.html" class="nav-logo">NEX<span>AUTO</span>GEAR</a>
-  <ul class="nav-links">
-    <li><a href="../index.html#wheels">Wheels</a></li>
-    <li><a href="../index.html#tires">Tires</a></li>
-    <li><a href="../index.html#tpms">TPMS</a></li>
-    <li><a href="../catalog/index.html">Catalog</a></li>
-  </ul>
-  <div class="nav-actions">
-    <a href="../members/login.html" class="btn btn-ghost btn-sm">Sign In</a>
-    <a href="../inquiry-form.html" class="btn btn-primary btn-sm">Get Quote</a>
-  </div>
-</nav>
-
-<div class="chat-layout">
-
-  <!-- Agent sidebar -->
-  <div class="agent-panel">
-    <div class="agent-avatar">
-      NX<div class="agent-dot"></div>
-    </div>
-    <div class="agent-name">NEXIA</div>
-    <div class="agent-title">B2B Sales Assistant</div>
-    <div class="agent-lang">
-      <span class="lang-chip">EN</span>
-      <span class="lang-chip">中文</span>
-      <span class="lang-chip">ES</span>
-    </div>
-
-    <div class="panel-section-title">Capabilities</div>
-    <div class="capability-list">
-      <div class="cap-item"><div class="cap-dot"></div>Product recommendations & fitment check</div>
-      <div class="cap-item"><div class="cap-dot"></div>MOQ & wholesale pricing guidance</div>
-      <div class="cap-item"><div class="cap-dot"></div>Shipping & Incoterms (FOB, CIF, DDP)</div>
-      <div class="cap-item"><div class="cap-dot"></div>OEM / private label inquiry routing</div>
-      <div class="cap-item"><div class="cap-dot"></div>Sample &amp; catalog request</div>
-      <div class="cap-item"><div class="cap-dot"></div>Quote form pre-fill assist</div>
-    </div>
-
-    <div class="panel-divider"></div>
-    <div class="panel-section-title">Quick Facts</div>
-    <div class="quick-facts">
-      <div class="fact-row"><span class="fact-key">MOQ Wheels</span><span class="fact-val">50 pcs</span></div>
-      <div class="fact-row"><span class="fact-key">MOQ Tires</span><span class="fact-val">100 pcs</span></div>
-      <div class="fact-row"><span class="fact-key">MOQ TPMS</span><span class="fact-val">200 pcs</span></div>
-      <div class="fact-row"><span class="fact-key">Lead Time</span><span class="fact-val">15–25 days</span></div>
-      <div class="fact-row"><span class="fact-key">Payment</span><span class="fact-val">T/T, L/C, OA</span></div>
-    </div>
-
-    <div class="panel-divider"></div>
-    <div style="font-size:0.78rem;color:var(--muted);line-height:1.55;">
-      Need a human sales rep? Email
-      <a href="mailto:Sales@nexautogear.com" style="color:var(--accent);">Sales@nexautogear.com</a>
-    </div>
-  </div>
-
-  <!-- Chat main -->
-  <div class="chat-main">
-    <div class="chat-header">
-      <div class="chat-header-info">
-        <div class="chat-header-avatar">NX</div>
-        <div>
-          <div class="chat-header-name">NEXIA — Sales Assistant</div>
-          <div class="chat-header-status">&#11044; Online · Avg reply &lt;10 sec</div>
-        </div>
-      </div>
-      <div class="chat-header-actions">
-        <a href="../inquiry-form.html" class="btn btn-primary btn-sm">Get Formal Quote</a>
-      </div>
-    </div>
-
-    <div class="chat-messages" id="chatMessages">
-
-      <div class="bot-disclaimer">
-        <span style="font-family:'Space Grotesk';font-size:0.7rem;font-weight:700;color:var(--accent);">BETA</span>
-        <span>NEXIA is a pre-sales assistant prototype. Pricing shown is indicative only — a formal quote will be sent by our sales team.</span>
-      </div>
-
-      <!-- Initial bot message -->
-      <div class="msg-row bot">
-        <div class="msg-avatar bot">NX</div>
-        <div class="msg-content">
-          <div class="msg-bubble">
-            Hello! I'm NEXIA, your NEXAutogear B2B sales assistant. I can help you with product recommendations, pricing guidance, MOQ, shipping, and private label options.<br/><br/>
-            What are you looking for today?
-          </div>
-          <div class="msg-time" id="startTime"></div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Quick replies -->
-    <div class="quick-replies" id="quickReplies">
-      <div class="qr-chip" onclick="sendQuick(this)">Wheel pricing & MOQ</div>
-      <div class="qr-chip" onclick="sendQuick(this)">TPMS sensor inquiry</div>
-      <div class="qr-chip" onclick="sendQuick(this)">Private label / OEM</div>
-      <div class="qr-chip" onclick="sendQuick(this)">Shipping options</div>
-      <div class="qr-chip" onclick="sendQuick(this)">Request a sample</div>
-    </div>
-
-    <!-- Input bar -->
-    <div class="chat-input-bar">
-      <div class="chat-input-wrap">
-        <textarea class="chat-input" id="chatInput" placeholder="Type your question…" rows="1"
-          onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-        <button class="send-btn" id="sendBtn" onclick="sendMessage()">SEND</button>
-      </div>
-      <div class="input-hint">Press Enter to send · Shift+Enter for new line</div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  /* ─── Bot knowledge base (prototype — to be replaced by live API) ─── */
-  const BOT_KB = [
-    {
-      triggers: ['wheel', 'rim', 'alloy', 'cast', 'forged'],
-      response: `We carry three wheel series:<br/>
-      <strong>NX-Street</strong> — cast alloy, 15"–22", street fitments<br/>
-      <strong>NX-Truck</strong> — heavy-duty forged, 17"–24", 6-lug &amp; 8-lug<br/>
-      <strong>NX-Bespoke</strong> — full custom flow-form<br/><br/>
-      <strong>MOQ:</strong> 50 pcs per SKU &nbsp;|&nbsp; <strong>Lead time:</strong> 15–20 days<br/>
-      Which size / finish are you targeting?`
-    },
-    {
-      triggers: ['tpms', 'sensor', 'tire pressure'],
-      response: `Our TPMS lineup:<br/>
-      <strong>Nexble BT-100</strong> — Bluetooth universal, programs to 98% of vehicles<br/>
-      <strong>NX-OEM</strong> — direct OEM replacement by VIN<br/>
-      <strong>Nexble Pro</strong> — fleet management via mobile app<br/><br/>
-      <strong>Battery:</strong> 3 Yr / 50,000 mi* &nbsp;|&nbsp; <strong>MOQ:</strong> 200 pcs<br/>
-      What vehicle make &amp; model are you fitting?`
-    },
-    {
-      triggers: ['tire', 'tyre'],
-      response: `We source tires from certified Chinese manufacturers meeting DOT / ECE / GB standards.<br/><br/>
-      Categories: Summer · All-Season · Winter · AT/Off-road · EV-optimized<br/>
-      <strong>Sizes:</strong> R14 – R24 passenger; up to R22.5 commercial<br/>
-      <strong>MOQ:</strong> 100 pcs per SKU<br/><br/>
-      Do you want to share a tire size or vehicle fitment list?`
-    },
-    {
-      triggers: ['private label', 'oem', 'brand', 'logo', 'custom'],
-      response: `Yes — we offer full OEM / private label service:<br/>
-      ✓ Your logo on hub caps, packaging, rim center<br/>
-      ✓ Custom colorways and finishes<br/>
-      ✓ Branded TPMS sensor stickers &amp; app skin<br/><br/>
-      <strong>Min. brand order:</strong> 200 pcs wheels or 500 pcs TPMS<br/>
-      <strong>Tooling fee:</strong> waived above 500 pcs<br/><br/>
-      To explore this further, please fill out our <a href="../inquiry-form.html" style="color:var(--accent)">quote form →</a>`
-    },
-    {
-      triggers: ['shipping', 'freight', 'logistics', 'incoterm', 'fob', 'cif', 'ddp'],
-      response: `We support all major Incoterms:<br/>
-      <strong>FOB Shanghai</strong> — most common for large orders<br/>
-      <strong>CIF destination port</strong> — we arrange freight &amp; insurance<br/>
-      <strong>DDP</strong> — door-to-door, duties paid (US &amp; EU)<br/><br/>
-      Typical transit: 18–25 days sea freight to US West Coast.<br/>
-      Air freight available for TPMS sensors and small lots.`
-    },
-    {
-      triggers: ['sample', 'demo', 'test'],
-      response: `Sample orders are available!<br/><br/>
-      <strong>Sample fee:</strong> 1.5× unit price (refunded on bulk order ≥500 pcs)<br/>
-      <strong>Lead time:</strong> 5–7 business days<br/>
-      <strong>Shipping:</strong> DHL / FedEx express at buyer's cost<br/><br/>
-      Shall I connect you with a sales rep to arrange the sample?`
-    },
-    {
-      triggers: ['price', 'pricing', 'cost', 'moq', 'minimum'],
-      response: `Indicative wholesale pricing (FOB Shanghai):<br/>
-      <strong>Wheels:</strong> $28 – $95 / pc depending on size &amp; finish<br/>
-      <strong>Tires:</strong> $22 – $78 / pc depending on size<br/>
-      <strong>TPMS (universal):</strong> $4.80 – $8.50 / pc<br/><br/>
-      For a formal quote with exact per-unit pricing, please submit our <a href="../inquiry-form.html" style="color:var(--accent)">inquiry form →</a>`
-    },
-    {
-      triggers: ['payment', 'terms', 'net 30', 'lc', 'wire', 'tt'],
-      response: `Payment options for approved accounts:<br/>
-      <strong>New accounts:</strong> 30% deposit, balance before shipment (T/T)<br/>
-      <strong>Established accounts:</strong> Net 30 / Net 60 upon credit approval<br/>
-      <strong>Large orders:</strong> Letter of Credit (L/C) at sight<br/><br/>
-      To apply for credit terms, complete our <a href="../inquiry-form.html" style="color:var(--accent)">customer application →</a>`
-    },
-    {
-      triggers: ['hello', 'hi', 'hey', 'start', '你好', 'hola'],
-      response: `Hello! I'm NEXIA, your NEXAutogear pre-sales assistant. I speak English, 中文, and Español.<br/><br/>
-      I can help with product specs, pricing guidance, MOQ, shipping, and OEM/private label. What can I help you with today?`
-    },
-    {
-      triggers: ['human', 'person', 'agent', 'representative', 'rep', 'speak to'],
-      response: `Of course! To connect with a human sales representative:<br/>
-      📧 <strong>Sales@nexautogear.com</strong><br/>
-      💬 WhatsApp: +86 xxx xxxx xxxx *(coming soon)*<br/><br/>
-      Or submit a <a href="../inquiry-form.html" style="color:var(--accent)">formal inquiry form →</a> and a rep will respond within 1 business day.`
-    }
-  ];
-
-  const DEFAULT_RESPONSE = `Thanks for your message! This is a prototype — I'm matching against a limited knowledge base right now.<br/><br/>
-  For a full response, please email <a href="mailto:Sales@nexautogear.com" style="color:var(--accent)">Sales@nexautogear.com</a> or fill out our <a href="../inquiry-form.html" style="color:var(--accent)">inquiry form →</a>`;
-
-  /* ─── Init ─── */
-  document.getElementById('startTime').textContent = formatTime(new Date());
-
-  function formatTime(d) {
-    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  }
-
-  function autoResize(el) {
-    el.style.height = 'auto';
-    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
-  }
-
-  function handleKey(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-  }
-
-  function sendQuick(el) {
-    document.getElementById('chatInput').value = el.textContent;
-    sendMessage();
-    document.getElementById('quickReplies').style.display = 'none';
-  }
-
-  function sendMessage() {
-    const input = document.getElementById('chatInput');
-    const text = input.value.trim();
-    if (!text) return;
-
-    appendMessage(text, 'user');
-    input.value = '';
-    input.style.height = 'auto';
-
-    showTyping();
-    const delay = 800 + Math.random() * 600;
-    setTimeout(() => {
-      removeTyping();
-      const reply = getReply(text);
-      appendMessage(reply, 'bot');
-      document.getElementById('quickReplies').style.display = 'none';
-    }, delay);
-  }
-
-  function getReply(text) {
-    const lower = text.toLowerCase();
-    for (const item of BOT_KB) {
-      if (item.triggers.some(t => lower.includes(t))) return item.response;
-    }
-    return DEFAULT_RESPONSE;
-  }
-
-  function appendMessage(content, role) {
-    const msgs = document.getElementById('chatMessages');
-    const row = document.createElement('div');
-    row.className = `msg-row ${role}`;
-
-    const initials = role === 'bot' ? 'NX' : 'YOU';
-    const avatarClass = role === 'bot' ? 'bot' : 'user';
-
-    row.innerHTML = `
-      <div class="msg-avatar ${avatarClass}">${initials}</div>
-      <div class="msg-content">
-        <div class="msg-bubble">${role === 'user' ? escHtml(content) : content}</div>
-        <div class="msg-time">${formatTime(new Date())}</div>
-      </div>`;
-
-    msgs.appendChild(row);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-
-  function showTyping() {
-    const msgs = document.getElementById('chatMessages');
-    const el = document.createElement('div');
-    el.className = 'msg-row bot typing-indicator';
-    el.id = 'typingRow';
-    el.innerHTML = `
-      <div class="msg-avatar bot">NX</div>
-      <div class="msg-content">
-        <div class="msg-bubble typing-dots">
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-          <div class="typing-dot"></div>
-        </div>
-      </div>`;
-    msgs.appendChild(el);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-
-  function removeTyping() {
-    const el = document.getElementById('typingRow');
-    if (el) el.remove();
-  }
-
-  function escHtml(s) {
-    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-</script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2d7d92d6a95f1c2c58ca23/1jr0r50oo';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  (function(d,t){
+    var BASE_URL="https://chatwoot-chatwoot.pkxdtf.easypanel.host";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";g.defer=true;g.async=true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){window.chatwootSDK.run({websiteToken:"X33dWaJDUB71P4S3qn8uce4T",baseUrl:BASE_URL});}
+  })(document,"script");
 </script>
 <!--End of Tawk.to Script-->
 </body>

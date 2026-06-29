@@ -1,22 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Account — NEXAutogear Portal</title>
+  <title>My Account � NEXAutogear Portal</title>
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/base.css" />
   <style>
     body { display: flex; flex-direction: column; min-height: 100vh; background: var(--bg); }
 
-    /* ── Dashboard layout ── */
+    /* -- Dashboard layout -- */
     .dash-wrap {
       display: flex;
       padding-top: var(--nav-h);
       min-height: 100vh;
     }
 
-    /* ── Sidebar ── */
+    /* -- Sidebar -- */
     .sidebar {
       width: 240px; flex-shrink: 0;
       background: var(--bg2);
@@ -85,7 +85,7 @@
     }
     .chat-sales-btn:hover { background: rgba(255,209,101,0.12); border-color: rgba(255,209,101,0.28); }
 
-    /* ── Main content ── */
+    /* -- Main content -- */
     .dash-main {
       flex: 1; padding: 2rem 2.5rem;
       overflow-x: hidden;
@@ -93,7 +93,7 @@
     .dash-page { display: none; }
     .dash-page.active { display: block; }
 
-    /* ── Page header ── */
+    /* -- Page header -- */
     .page-hdr {
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem;
@@ -101,7 +101,7 @@
     .page-hdr-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 900; }
     .page-hdr-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
 
-    /* ── Stat cards ── */
+    /* -- Stat cards -- */
     .stats-row {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 1rem; margin-bottom: 1.75rem;
@@ -116,11 +116,11 @@
     .stat-card-sub.up { color: var(--success); }
     .stat-card-sub.warn { color: var(--warning); }
 
-    /* ── Two-col layout ── */
+    /* -- Two-col layout -- */
     .two-col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
     .one-col { margin-bottom: 1.25rem; }
 
-    /* ── Panel ── */
+    /* -- Panel -- */
     .panel {
       background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-lg); overflow: hidden;
@@ -134,7 +134,7 @@
     .panel-title { font-weight: 700; font-size: 0.9rem; }
     .panel-body { padding: 1.1rem 1.25rem; }
 
-    /* ── Order / Inquiry rows ── */
+    /* -- Order / Inquiry rows -- */
     .item-list { display: flex; flex-direction: column; }
     .item-row {
       display: flex; align-items: center; gap: 1rem;
@@ -154,7 +154,7 @@
     .item-value { font-weight: 700; font-size: 0.9rem; }
     .item-date { font-size: 0.75rem; color: var(--muted); }
 
-    /* ── Status badges ── */
+    /* -- Status badges -- */
     .status {
       display: inline-flex; align-items: center; gap: 0.3rem;
       padding: 0.2rem 0.6rem; border-radius: 99px;
@@ -166,7 +166,7 @@
     .status-review   { background: rgba(173,221,255,0.08); color: var(--blue); }
     .status-closed   { background: rgba(255,255,255,0.05); color: var(--muted); }
 
-    /* ── Sales team panel ── */
+    /* -- Sales team panel -- */
     .team-grid { display: flex; flex-direction: column; gap: 0.75rem; }
     .agent-card {
       display: flex; align-items: center; gap: 0.85rem;
@@ -204,7 +204,7 @@
     .agent-status-text.busy { color: var(--warning); }
     .agent-status-text.offline { color: var(--muted2); }
 
-    /* ── Quick actions ── */
+    /* -- Quick actions -- */
     .quick-actions {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
       margin-bottom: 1.75rem;
@@ -219,7 +219,7 @@
     .quick-btn-label { font-size: 0.8rem; font-weight: 600; }
     .quick-btn-sub { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
 
-    /* ── Downloads list ── */
+    /* -- Downloads list -- */
     .dl-row {
       display: flex; align-items: center; gap: 0.85rem;
       padding: 0.75rem 0;
@@ -230,20 +230,20 @@
     .dl-name { flex: 1; font-size: 0.85rem; font-weight: 500; }
     .dl-meta { font-size: 0.75rem; color: var(--muted); }
 
-    /* ── RFQ list ── */
+    /* -- RFQ list -- */
     .rfq-empty {
       text-align: center; padding: 2rem;
       color: var(--muted); font-size: 0.875rem;
     }
     .rfq-empty-icon { font-size: 2rem; margin-bottom: 0.75rem; }
 
-    /* ── Account info ── */
+    /* -- Account info -- */
     .account-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
     .info-group { display: flex; flex-direction: column; gap: 0.3rem; }
     .info-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
     .info-value { font-size: 0.9rem; font-weight: 500; }
 
-    /* ── Chat handoff modal ── */
+    /* -- Chat handoff modal -- */
     .modal-overlay {
       position: fixed; inset: 0; z-index: 3000;
       background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
@@ -269,7 +269,7 @@
     }
     .modal-close:hover { color: var(--white); }
 
-    /* ── Team selector in modal ── */
+    /* -- Team selector in modal -- */
     .team-select-grid { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.25rem; }
     .team-option {
       display: flex; align-items: center; gap: 0.85rem;
@@ -311,7 +311,7 @@
       color: var(--muted); margin-bottom: 1.25rem;
     }
 
-    /* ── Chat widget (dashboard version) ── */
+    /* -- Chat widget (dashboard version) -- */
     .chat-widget {
       position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 2000;
       display: flex; flex-direction: column; align-items: flex-end; gap: 0.65rem;
@@ -417,7 +417,7 @@
       display: flex; align-items: center; justify-content: center;
     }
 
-    /* ── Responsive ── */
+    /* -- Responsive -- */
     @media (max-width: 1100px) { .stats-row { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } }
     @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(2,1fr); } .quick-actions { grid-template-columns: repeat(2,1fr); } .account-grid { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
@@ -427,882 +427,14 @@
     }
   </style>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCMRTRPQFC"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GCMRTRPQFC');
-  </script>
-</head>
-<body>
-
-<!-- Nav -->
-<nav class="nav">
-  <a href="../index.html" class="nav-logo">NEX<span>AUTO</span>GEAR</a>
-  <ul class="nav-links">
-    <li><a href="../index.html#wheels">Wheels</a></li>
-    <li><a href="../index.html#tires">Tires</a></li>
-    <li><a href="../index.html#tpms">TPMS</a></li>
-    <li><a href="../catalog/index.html">Catalog</a></li>
-  </ul>
-  <div class="nav-actions">
-    <span style="font-size:0.8rem;color:var(--muted);">Welcome back, <strong style="color:var(--text);">Mesa Tire & Wheel</strong></span>
-    <button class="btn btn-ghost btn-sm" onclick="logout()">Sign Out</button>
-  </div>
-</nav>
-
-<!-- ── Dashboard Wrap ── -->
-<div class="dash-wrap">
-
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-user">
-      <div class="user-avatar">MT</div>
-      <div class="user-name">Mesa Tire & Wheel Inc.</div>
-      <div class="user-company">Phoenix, AZ · USA</div>
-      <div class="user-status"><div class="dot-live"></div> Active Account</div>
-    </div>
-    <nav class="sidebar-nav">
-      <div class="sidebar-section-label">Overview</div>
-      <button class="sidebar-link active" onclick="showPage('overview',this)">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">HM</span> Dashboard
-      </button>
-      <button class="sidebar-link" onclick="showPage('orders',this)">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">ORD</span> My Orders
-        <span class="sidebar-badge green">3</span>
-      </button>
-      <button class="sidebar-link" onclick="showPage('rfq',this)">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">RFQ</span> Inquiries & RFQ
-        <span class="sidebar-badge">1</span>
-      </button>
-
-      <div class="sidebar-section-label" style="margin-top:0.5rem;">Catalog</div>
-      <button class="sidebar-link" onclick="showPage('downloads',this)">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">DL</span> Downloads
-      </button>
-      <button class="sidebar-link" onclick="window.location.href='../catalog/index.html'">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">CAT</span> Browse Catalog
-      </button>
-
-      <div class="sidebar-section-label" style="margin-top:0.5rem;">Account</div>
-      <button class="sidebar-link" onclick="showPage('account',this)">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">ACC</span> Account Settings
-      </button>
-      <button class="sidebar-link" onclick="showPage('team',this)">
-        <span class="sidebar-link-icon" style="font-family:'Space Grotesk';font-size:0.62rem;font-weight:900;color:var(--accent);opacity:0.7;">TEAM</span> My Sales Team
-      </button>
-    </nav>
-    <div class="sidebar-bottom">
-      <button class="chat-sales-btn" onclick="openHandoff()">
-        <div class="dot-live"></div>
-        <div>
-          <div style="font-size:0.82rem;font-weight:600;">Talk to Sales Team</div>
-          <div style="font-size:0.72rem;color:var(--muted);">CN & TW teams online</div>
-        </div>
-        <span style="margin-left:auto;font-size:0.8rem;">→</span>
-      </button>
-    </div>
-  </aside>
-
-  <!-- Main -->
-  <main class="dash-main">
-
-    <!-- ══ OVERVIEW ══ -->
-    <div class="dash-page active" id="page-overview">
-      <div class="page-hdr">
-        <div>
-          <div class="page-hdr-title">Dashboard</div>
-          <div class="page-hdr-sub">Good morning · Friday, May 2, 2026</div>
-        </div>
-        <button class="btn btn-primary btn-sm" onclick="openHandoff()">
-          <div class="dot-live" style="width:6px;height:6px;"></div>
-          Talk to Sales
-        </button>
-      </div>
-
-      <!-- Stats -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-card-label">Total Orders</div>
-          <div class="stat-card-value" style="color:var(--accent);">12</div>
-          <div class="stat-card-sub up">↑ 3 this month</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-label">Total Spent (USD)</div>
-          <div class="stat-card-value">$24,850</div>
-          <div class="stat-card-sub up">↑ $6,200 this quarter</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-label">Open Inquiries</div>
-          <div class="stat-card-value" style="color:var(--warning);">2</div>
-          <div class="stat-card-sub warn">1 awaiting response</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-card-label">Downloads</div>
-          <div class="stat-card-value">8</div>
-          <div class="stat-card-sub">Catalog files saved</div>
-        </div>
-      </div>
-
-      <!-- Quick actions -->
-      <div class="quick-actions">
-        <div class="quick-btn" onclick="openHandoff()">
-          <div class="quick-btn-icon" style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:900;color:var(--accent);">MSG</div>
-          <div class="quick-btn-label">New Inquiry</div>
-          <div class="quick-btn-sub">Talk to sales team</div>
-        </div>
-        <div class="quick-btn" onclick="window.location.href='../catalog/index.html'">
-          <div class="quick-btn-icon" style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:900;color:var(--accent);">CAT</div>
-          <div class="quick-btn-label">Browse Catalog</div>
-          <div class="quick-btn-sub">Wheels · Tires · TPMS</div>
-        </div>
-        <div class="quick-btn" onclick="showPage('orders',document.querySelector('.sidebar-link:nth-child(3)'))">
-          <div class="quick-btn-icon" style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:900;color:var(--accent);">ORD</div>
-          <div class="quick-btn-label">Track Orders</div>
-          <div class="quick-btn-sub">3 active shipments</div>
-        </div>
-        <div class="quick-btn" onclick="showPage('downloads',null)">
-          <div class="quick-btn-icon" style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:900;color:var(--accent);">DL</div>
-          <div class="quick-btn-label">Downloads</div>
-          <div class="quick-btn-sub">Spec sheets & PDFs</div>
-        </div>
-      </div>
-
-      <!-- Two col: Recent orders + Sales team -->
-      <div class="two-col">
-        <div class="panel">
-          <div class="panel-hdr">
-            <span class="panel-title">Recent Orders</span>
-            <button class="btn btn-ghost btn-sm" onclick="showPage('orders',null)">View all →</button>
-          </div>
-          <div class="panel-body">
-            <div class="item-list">
-              <div class="item-row">
-                <div class="item-icon icon-blue" style="background:rgba(255,209,101,0.08);border:1px solid rgba(255,209,101,0.12);">W</div>
-                <div class="item-info">
-                  <div class="item-title">NEX Forged Series 19×9.5 ×8</div>
-                  <div class="item-sub">Order #NX-2026-0312 · Wheels</div>
-                </div>
-                <div class="item-right">
-                  <div class="item-value">$3,840</div>
-                  <div style="margin-top:0.2rem;"><span class="status status-shipped">✈ Shipped</span></div>
-                </div>
-              </div>
-              <div class="item-row">
-                <div class="item-icon" style="background:rgba(173,221,255,0.08);border:1px solid rgba(173,221,255,0.15);">T</div>
-                <div class="item-info">
-                  <div class="item-title">Michelin Pilot Sport 4S 245/40R19 ×4</div>
-                  <div class="item-sub">Order #NX-2026-0298 · Tires</div>
-                </div>
-                <div class="item-right">
-                  <div class="item-value">$1,280</div>
-                  <div style="margin-top:0.2rem;"><span class="status status-shipped">✈ Shipped</span></div>
-                </div>
-              </div>
-              <div class="item-row">
-                <div class="item-icon" style="background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.15);">P</div>
-                <div class="item-info">
-                  <div class="item-title">NEX TPMS Universal Sensor ×20</div>
-                  <div class="item-sub">Order #NX-2026-0285 · TPMS</div>
-                </div>
-                <div class="item-right">
-                  <div class="item-value">$620</div>
-                  <div style="margin-top:0.2rem;"><span class="status status-active">✓ Delivered</span></div>
-                </div>
-              </div>
-              <div class="item-row">
-                <div class="item-icon icon-blue" style="background:rgba(255,209,101,0.08);border:1px solid rgba(255,209,101,0.12);">W</div>
-                <div class="item-info">
-                  <div class="item-title">Off-Road Series 20×10 ×4</div>
-                  <div class="item-sub">Order #NX-2026-0271 · Wheels</div>
-                </div>
-                <div class="item-right">
-                  <div class="item-value">$2,160</div>
-                  <div style="margin-top:0.2rem;"><span class="status status-active">✓ Delivered</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sales team -->
-        <div class="panel">
-          <div class="panel-hdr">
-            <span class="panel-title">Your Sales Team</span>
-            <span class="badge badge-green">3 Online</span>
-          </div>
-          <div class="panel-body">
-            <div class="team-grid">
-              <div class="agent-card">
-                <div class="agent-av online" style="background:linear-gradient(135deg,#1a7fff,#0050bb);">K</div>
-                <div class="agent-info">
-                  <div class="agent-name">Kaizen</div>
-                  <div class="agent-role">Senior Sales · Taiwan</div>
-                  <div class="agent-tag">🇹🇼 EN · ZH · Wheels specialist</div>
-                </div>
-                <div>
-                  <div class="agent-status-text online">● Online</div>
-                  <button class="btn btn-primary btn-sm" style="margin-top:0.35rem;" onclick="startChatWith('Kaizen','TW')">Chat</button>
-                </div>
-              </div>
-              <div class="agent-card">
-                <div class="agent-av online" style="background:linear-gradient(135deg,#e63946,#c1121f);">W</div>
-                <div class="agent-info">
-                  <div class="agent-name">Wei (伟)</div>
-                  <div class="agent-role">Sales · China (Guangzhou)</div>
-                  <div class="agent-tag">🇨🇳 EN · ZH · TPMS & Tires</div>
-                </div>
-                <div>
-                  <div class="agent-status-text online">● Online</div>
-                  <button class="btn btn-primary btn-sm" style="margin-top:0.35rem;" onclick="startChatWith('Wei','CN')">Chat</button>
-                </div>
-              </div>
-              <div class="agent-card">
-                <div class="agent-av busy" style="background:linear-gradient(135deg,#f5a623,#e67e00);">L</div>
-                <div class="agent-info">
-                  <div class="agent-name">Linda (琳达)</div>
-                  <div class="agent-role">Sales · China (Guangzhou)</div>
-                  <div class="agent-tag">🇨🇳 EN · ES · Bulk orders</div>
-                </div>
-                <div>
-                  <div class="agent-status-text busy">◐ Busy</div>
-                  <button class="btn btn-outline btn-sm" style="margin-top:0.35rem;" onclick="startChatWith('Linda','CN')">Leave msg</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Open inquiries notice -->
-      <div class="panel" style="border-color:rgba(255,165,2,0.2);">
-        <div class="panel-hdr" style="background:rgba(255,165,2,0.04);">
-          <span class="panel-title" style="color:var(--warning);">⚠ Open Inquiry Requires Your Response</span>
-          <button class="btn btn-outline btn-sm" onclick="showPage('rfq',null)">View →</button>
-        </div>
-        <div class="panel-body">
-          <div class="item-row">
-            <div class="item-icon" style="font-size:1.1rem;background:rgba(255,165,2,0.08);border:1px solid rgba(255,165,2,0.2);width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;">RFQ</div>
-            <div class="item-info">
-              <div class="item-title">RFQ #Q-2026-041 — Custom wheel order 20×10 Off-Road ×40 units</div>
-              <div class="item-sub">Wei replied with a quote · Waiting for your confirmation</div>
-            </div>
-            <div class="item-right">
-              <span class="status status-pending"> Awaiting</span>
-              <div class="item-date" style="margin-top:0.3rem;">2 days ago</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ ORDERS ══ -->
-    <div class="dash-page" id="page-orders">
-      <div class="page-hdr">
-        <div>
-          <div class="page-hdr-title">My Orders</div>
-          <div class="page-hdr-sub">12 total orders · 3 active shipments</div>
-        </div>
-        <button class="btn btn-primary btn-sm" onclick="openHandoff()">+ New Inquiry</button>
-      </div>
-      <!-- Order filter -->
-      <div style="display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap;">
-        <button class="filter-btn active" style="padding:0.35rem 0.85rem;background:rgba(255,209,101,0.1);border:1px solid var(--accent);border-radius:99px;font-size:0.8rem;color:var(--accent);cursor:pointer;">All</button>
-        <button class="filter-btn" style="padding:0.35rem 0.85rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:99px;font-size:0.8rem;color:var(--muted);cursor:pointer;">Shipped</button>
-        <button class="filter-btn" style="padding:0.35rem 0.85rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:99px;font-size:0.8rem;color:var(--muted);cursor:pointer;">Delivered</button>
-        <button class="filter-btn" style="padding:0.35rem 0.85rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:99px;font-size:0.8rem;color:var(--muted);cursor:pointer;">Processing</button>
-      </div>
-      <div class="panel">
-        <div class="panel-hdr">
-          <span class="panel-title">Order History</span>
-        </div>
-        <div class="panel-body" style="padding:0;">
-          <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
-            <thead>
-              <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,0.02);">
-                <th style="padding:0.75rem 1.25rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;">Order ID</th>
-                <th style="padding:0.75rem 1rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;">Product</th>
-                <th style="padding:0.75rem 1rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;">Category</th>
-                <th style="padding:0.75rem 1rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;">Amount</th>
-                <th style="padding:0.75rem 1rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;">Date</th>
-                <th style="padding:0.75rem 1rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;">Status</th>
-                <th style="padding:0.75rem 1rem;text-align:left;font-weight:600;color:var(--muted);font-size:0.78rem;"></th>
-              </tr>
-            </thead>
-            <tbody id="ordersTable">
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ RFQ / INQUIRIES ══ -->
-    <div class="dash-page" id="page-rfq">
-      <div class="page-hdr">
-        <div>
-          <div class="page-hdr-title">Inquiries & RFQ</div>
-          <div class="page-hdr-sub">Submit a quote request — sales team responds within 4 hours</div>
-        </div>
-        <button class="btn btn-primary btn-sm" onclick="openHandoff()">+ New Inquiry</button>
-      </div>
-      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:1.25rem;">
-        <div>
-          <div class="panel" style="margin-bottom:1.25rem;border-color:rgba(255,165,2,0.25);">
-            <div class="panel-hdr" style="background:rgba(255,165,2,0.04);">
-              <span class="panel-title">🟡 RFQ #Q-2026-041</span>
-              <span class="status status-pending">Awaiting Your Reply</span>
-            </div>
-            <div class="panel-body">
-              <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                <div style="font-size:0.875rem;"><strong>Custom Off-Road Series 20×10</strong> · Matte Black · 5×150 bolt pattern · Qty: 40 sets</div>
-                <div style="background:rgba(255,165,2,0.05);border:1px solid rgba(255,165,2,0.15);border-radius:9px;padding:0.85rem;">
-                  <div style="font-size:0.72rem;color:var(--warning);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.35rem;">Wei's Quote — May 1, 2026</div>
-                  <div style="font-size:0.875rem;line-height:1.65;">Hi, thanks for your inquiry! For 40 sets of the Off-Road 20×10 in Matte Black / 5×150:<br/>
-                  Unit price: <strong>$198 USD / set</strong><br/>
-                  Total: <strong>$7,920 USD</strong><br/>
-                  Lead time: 18–22 business days (custom order)<br/>
-                  Shipping: DHL Express to Phoenix, AZ ~$420<br/><br/>
-                  Please confirm and I'll send the proforma invoice. Let me know if you need a different finish or can adjust qty for a better rate.</div>
-                </div>
-                <div style="display:flex;gap:0.65rem;">
-                  <button class="btn btn-success btn-sm" onclick="acceptQuote()">✓ Accept Quote</button>
-                  <button class="btn btn-outline btn-sm" onclick="startChatWith('Wei','CN')">Reply to Wei</button>
-                  <button class="btn btn-ghost btn-sm">Request Revision</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <div class="panel-hdr">
-              <span class="panel-title">Past Inquiries</span>
-            </div>
-            <div class="panel-body">
-              <div class="item-list">
-                <div class="item-row">
-                  <div class="item-info">
-                    <div class="item-title">RFQ #Q-2026-028 — TPMS Universal Sensor ×100</div>
-                    <div class="item-sub">Handled by Kaizen · Taiwan team</div>
-                  </div>
-                  <div class="item-right">
-                    <span class="status status-closed">✓ Closed</span>
-                    <div class="item-date">Apr 12, 2026</div>
-                  </div>
-                </div>
-                <div class="item-row">
-                  <div class="item-info">
-                    <div class="item-title">RFQ #Q-2026-015 — Street Performance 19" ×20 sets</div>
-                    <div class="item-sub">Handled by Linda · China team</div>
-                  </div>
-                  <div class="item-right">
-                    <span class="status status-closed">✓ Closed</span>
-                    <div class="item-date">Mar 5, 2026</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- RFQ submit form -->
-        <div class="panel">
-          <div class="panel-hdr"><span class="panel-title">Submit New Inquiry</span></div>
-          <div class="panel-body">
-            <div style="display:flex;flex-direction:column;gap:0.85rem;">
-              <div class="form-group">
-                <label class="form-label">Product Category</label>
-                <select class="form-select">
-                  <option>Wheels & Rims</option>
-                  <option>Tires</option>
-                  <option>TPMS Sensors</option>
-                  <option>Bundle Package</option>
-                  <option>Other / General</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Product / Part Details</label>
-                <input type="text" class="form-input" placeholder="e.g. NEX Forged 19×9.5 ET35 5×114.3 Gloss Black" />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Quantity (sets / units)</label>
-                <input type="number" class="form-input" placeholder="e.g. 20" min="1" />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Target Budget (USD)</label>
-                <input type="text" class="form-input" placeholder="e.g. $4,000 total" />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Additional Notes</label>
-                <textarea class="form-textarea" placeholder="Special finish, deadline, shipping address, etc…"></textarea>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Assign to</label>
-                <select class="form-select" id="rfqAssign">
-                  <option value="auto">🤖 Auto-assign (fastest available)</option>
-                  <option value="kaizen">Kaizen — Taiwan team (EN/ZH)</option>
-                  <option value="wei">Wei — China team (EN/ZH)</option>
-                  <option value="linda">Linda — China team (EN/ES)</option>
-                </select>
-              </div>
-              <button class="btn btn-primary btn-full" onclick="submitRFQ()">Submit Inquiry →</button>
-              <div style="font-size:0.76rem;color:var(--muted);text-align:center;">Average response time: <strong style="color:var(--success);">under 4 hours</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ DOWNLOADS ══ -->
-    <div class="dash-page" id="page-downloads">
-      <div class="page-hdr">
-        <div>
-          <div class="page-hdr-title">Downloads</div>
-          <div class="page-hdr-sub">Your saved catalog files and technical documents</div>
-        </div>
-        <a href="../catalog/index.html" class="btn btn-outline btn-sm">Browse All Catalogs →</a>
-      </div>
-      <div class="panel">
-        <div class="panel-hdr"><span class="panel-title">Downloaded Files</span></div>
-        <div class="panel-body">
-          <div class="item-list">
-            <div class="item-row">
-              <div style="font-size:1.2rem;">📄</div>
-              <div class="item-info">
-                <div class="item-title">Wheels & Rims Full Catalog 2026 — v3.2</div>
-                <div class="item-sub">PDF · 42 MB · EN</div>
-              </div>
-              <div class="item-right">
-                <div class="item-date">Downloaded May 1</div>
-                <button class="btn btn-outline btn-sm" style="margin-top:0.3rem;">⬇ Re-download</button>
-              </div>
-            </div>
-            <div class="item-row">
-              <div style="font-size:1.2rem;">📄</div>
-              <div class="item-info">
-                <div class="item-title">NEX TPMS Product Catalog — v4.0</div>
-                <div class="item-sub">PDF · 18 MB · EN/ES</div>
-              </div>
-              <div class="item-right">
-                <div class="item-date">Downloaded Apr 28</div>
-                <button class="btn btn-outline btn-sm" style="margin-top:0.3rem;">⬇ Re-download</button>
-              </div>
-            </div>
-            <div class="item-row">
-              <div style="font-size:1.2rem;">📊</div>
-              <div class="item-info">
-                <div class="item-title">Factory Price List 2026 (Full)</div>
-                <div class="item-sub">PDF + Excel · Members only</div>
-              </div>
-              <div class="item-right">
-                <div class="item-date">Downloaded Apr 15</div>
-                <button class="btn btn-outline btn-sm" style="margin-top:0.3rem;">⬇ Re-download</button>
-              </div>
-            </div>
-            <div class="item-row">
-              <div style="font-size:1.2rem;">🔧</div>
-              <div class="item-info">
-                <div class="item-title">TPMS Installation & Programming Manual v2.3</div>
-                <div class="item-sub">PDF · 12 MB · EN</div>
-              </div>
-              <div class="item-right">
-                <div class="item-date">Downloaded Mar 22</div>
-                <button class="btn btn-outline btn-sm" style="margin-top:0.3rem;">⬇ Re-download</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ ACCOUNT SETTINGS ══ -->
-    <div class="dash-page" id="page-account">
-      <div class="page-hdr">
-        <div>
-          <div class="page-hdr-title">Account Settings</div>
-          <div class="page-hdr-sub">Manage your company profile and contact info</div>
-        </div>
-        <button class="btn btn-primary btn-sm" onclick="showToast('Changes saved','success')">Save Changes</button>
-      </div>
-      <div class="account-grid">
-        <div class="panel">
-          <div class="panel-hdr"><span class="panel-title">Company Information</span></div>
-          <div class="panel-body" style="display:flex;flex-direction:column;gap:0.85rem;">
-            <div class="form-group"><label class="form-label">Company Name</label><input type="text" class="form-input" value="Mesa Tire & Wheel Inc." /></div>
-            <div class="form-group"><label class="form-label">Business Type</label><input type="text" class="form-input" value="Tire Shop" /></div>
-            <div class="form-group"><label class="form-label">Tax ID / EIN</label><input type="text" class="form-input" value="86-1234567" /></div>
-            <div class="form-group"><label class="form-label">Website</label><input type="url" class="form-input" value="https://mesatireandwheel.com" /></div>
-            <div class="form-group"><label class="form-label">Primary Market</label><input type="text" class="form-input" value="🇺🇸 United States" /></div>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="panel-hdr"><span class="panel-title">Contact & Login</span></div>
-          <div class="panel-body" style="display:flex;flex-direction:column;gap:0.85rem;">
-            <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-input" value="Marco Rodriguez" /></div>
-            <div class="form-group"><label class="form-label">Job Title</label><input type="text" class="form-input" value="Owner / Purchasing Manager" /></div>
-            <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" value="marco@mesatireandwheel.com" /></div>
-            <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-input" value="+1 (602) 555-0190" /></div>
-            <div class="form-group"><label class="form-label">WhatsApp</label><input type="text" class="form-input" value="+16025550190" /></div>
-            <div class="form-group"><label class="form-label">Preferred Language</label>
-              <select class="form-select"><option selected>🇺🇸 English</option><option>🇲🇽 Español</option><option>🇹🇼 中文</option></select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel" style="margin-top:1.25rem;border-color:rgba(255,71,87,0.15);">
-        <div class="panel-hdr"><span class="panel-title" style="color:var(--danger);">⚠ Danger Zone</span></div>
-        <div class="panel-body" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-          <div><div style="font-weight:600;font-size:0.875rem;margin-bottom:0.2rem;">Delete Account</div><div style="font-size:0.8rem;color:var(--muted);">Permanently remove your account and all associated data.</div></div>
-          <button class="btn btn-danger btn-sm">Delete Account</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ SALES TEAM ══ -->
-    <div class="dash-page" id="page-team">
-      <div class="page-hdr">
-        <div>
-          <div class="page-hdr-title">My Sales Team</div>
-          <div class="page-hdr-sub">Your dedicated contacts at NEXAutogear</div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
-
-        <!-- TW Team -->
-        <div class="panel">
-          <div class="panel-hdr">
-            <span class="panel-title">🇹🇼 Taiwan Team</span>
-            <span class="badge badge-green">Online</span>
-          </div>
-          <div class="panel-body">
-            <div class="agent-card" style="margin-bottom:0.85rem;">
-              <div class="agent-av online" style="background:linear-gradient(135deg,#1a7fff,#0050bb);width:52px;height:52px;font-size:1.1rem;">K</div>
-              <div class="agent-info">
-                <div class="agent-name" style="font-size:1rem;">Kaizen</div>
-                <div class="agent-role">Senior Account Manager</div>
-                <div class="agent-tag">🇹🇼 Taipei · EN / ZH</div>
-                <div class="agent-tag">⬡ Wheels · TPMS specialist</div>
-              </div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:0.5rem;">
-              <button class="btn btn-primary btn-full" onclick="startChatWith('Kaizen','TW')">💬 Start Chat</button>
-              <button class="btn btn-outline btn-full" onclick="showPage('rfq',null)">📋 Submit RFQ</button>
-              <a href="mailto:Kaizen@nexautogear.com" class="btn btn-ghost btn-full">✉ Kaizen@nexautogear.com</a>
-            </div>
-            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">
-              <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;">Available hours (Taiwan Time GMT+8)</div>
-              <div style="font-size:0.82rem;">Mon – Sat · 9:00 AM – 10:00 PM</div>
-              <div style="font-size:0.78rem;color:var(--muted);margin-top:0.2rem;">= EST: 8 PM – 9 AM / PST: 5 PM – 6 AM</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CN Team -->
-        <div class="panel">
-          <div class="panel-hdr">
-            <span class="panel-title">🇨🇳 China Team (Guangzhou)</span>
-            <span class="badge badge-green">2 Online</span>
-          </div>
-          <div class="panel-body">
-            <div class="team-grid">
-              <div class="agent-card">
-                <div class="agent-av online" style="background:linear-gradient(135deg,#e63946,#c1121f);">W</div>
-                <div class="agent-info">
-                  <div class="agent-name">Wei (伟)</div>
-                  <div class="agent-role">Sales Manager</div>
-                  <div class="agent-tag">🇨🇳 Guangzhou · EN / ZH</div>
-                  <div class="agent-tag">◎ Tires & TPMS bulk orders</div>
-                </div>
-                <button class="btn btn-primary btn-sm" onclick="startChatWith('Wei','CN')">Chat</button>
-              </div>
-              <div class="agent-card">
-                <div class="agent-av busy" style="background:linear-gradient(135deg,#f5a623,#e67e00);">L</div>
-                <div class="agent-info">
-                  <div class="agent-name">Linda (琳达)</div>
-                  <div class="agent-role">Sales Coordinator</div>
-                  <div class="agent-tag">🇨🇳 Guangzhou · EN / ES</div>
-                  <div class="agent-tag">🌎 LatAm market specialist</div>
-                </div>
-                <button class="btn btn-outline btn-sm" onclick="startChatWith('Linda','CN')">Msg</button>
-              </div>
-            </div>
-            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">
-              <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.4rem;">Available hours (China Time GMT+8)</div>
-              <div style="font-size:0.82rem;">Mon – Fri · 9:00 AM – 7:00 PM</div>
-              <div style="font-size:0.78rem;color:var(--muted);margin-top:0.2rem;">= EST: 8 PM – 6 AM / PST: 5 PM – 3 AM</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </main>
-</div>
-
-<!-- ══ Chat Handoff Modal ══ -->
-<div class="modal-overlay" id="handoffModal">
-  <div class="modal" style="position:relative;">
-    <button class="modal-close" onclick="closeHandoff()">✕</button>
-    <div id="handoffStep1">
-      <div class="modal-title">Talk to Sales Team</div>
-      <div class="modal-sub">Our China and Taiwan teams are standing by. Choose who you'd like to speak with, or let us auto-assign the fastest available agent.</div>
-
-      <div style="font-size:0.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem;">Select Team</div>
-      <div class="team-select-grid">
-        <label class="team-option selected" id="opt-auto" onclick="selectTeam('auto',this)">
-          <input type="radio" name="team" value="auto" checked />
-          <div class="team-flag"> </div>
-          <div class="team-info">
-            <div class="team-name">Auto-Assign (Fastest)</div>
-            <div class="team-desc">Connect to whichever agent replies first — usually under 2 minutes</div>
-            <div class="team-agents">
-              <div class="mini-av" style="background:linear-gradient(135deg,#1a7fff,#005bb5);">K</div>
-              <div class="mini-av" style="background:linear-gradient(135deg,#e63946,#c1121f);">W</div>
-              <div class="mini-av" style="background:linear-gradient(135deg,#f5a623,#e67e00);">L</div>
-              <div class="team-online"><div class="dot-live" style="width:5px;height:5px;"></div> 3 online</div>
-            </div>
-          </div>
-        </label>
-        <label class="team-option" id="opt-tw" onclick="selectTeam('tw',this)">
-          <input type="radio" name="team" value="tw" />
-          <div class="team-flag">🇹🇼</div>
-          <div class="team-info">
-            <div class="team-name">Taiwan Team — Kaizen</div>
-            <div class="team-desc">EN / ZH · Wheels & TPMS specialist · Taipei (GMT+8)</div>
-            <div class="team-agents">
-              <div class="mini-av" style="background:linear-gradient(135deg,#1a7fff,#005bb5);">K</div>
-              <div class="team-online"><div class="dot-live" style="width:5px;height:5px;"></div> Online now</div>
-            </div>
-          </div>
-        </label>
-        <label class="team-option" id="opt-cn" onclick="selectTeam('cn',this)">
-          <input type="radio" name="team" value="cn" />
-          <div class="team-flag">🇨🇳</div>
-          <div class="team-info">
-            <div class="team-name">China Team — Guangzhou</div>
-            <div class="team-desc">EN / ZH / ES · Tires, TPMS bulk, LatAm orders</div>
-            <div class="team-agents">
-              <div class="mini-av" style="background:linear-gradient(135deg,#e63946,#c1121f);">W</div>
-              <div class="mini-av" style="background:linear-gradient(135deg,#f5a623,#e67e00);">L</div>
-              <div class="team-online"><div class="dot-live" style="width:5px;height:5px;"></div> 2 online</div>
-            </div>
-          </div>
-        </label>
-      </div>
-
-      <div class="topic-select">
-        <div style="font-size:0.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;">Topic (optional)</div>
-        <div class="topic-chips">
-          <div class="topic-chip" onclick="toggleTopic(this)">⬡ Wheels inquiry</div>
-          <div class="topic-chip" onclick="toggleTopic(this)">◎ Tire selection</div>
-          <div class="topic-chip" onclick="toggleTopic(this)">📡 TPMS support</div>
-          <div class="topic-chip" onclick="toggleTopic(this)">📦 Bulk order</div>
-          <div class="topic-chip" onclick="toggleTopic(this)">💰 Pricing / quote</div>
-          <div class="topic-chip" onclick="toggleTopic(this)">🚚 Shipping query</div>
-          <div class="topic-chip" onclick="toggleTopic(this)">🔧 Tech support</div>
-        </div>
-      </div>
-
-      <button class="btn btn-primary btn-full btn-lg" onclick="connectToAgent()">Connect Now →</button>
-    </div>
-
-    <!-- Connecting state -->
-    <div id="handoffStep2" style="display:none;text-align:center;padding:1rem 0;">
-      <div style="font-size:2rem;margin-bottom:0.75rem;">
-        <span id="connectingFlag">🇹🇼</span>
-      </div>
-      <div style="font-weight:700;font-size:1rem;margin-bottom:0.35rem;" id="connectingName">Connecting to Kaizen…</div>
-      <div style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;">Transferring your inquiry to the sales team</div>
-      <div style="display:flex;justify-content:center;gap:6px;margin-bottom:1.5rem;">
-        <div class="td" style="width:8px;height:8px;border-radius:50%;background:var(--accent);animation:tdot 1.2s infinite;"></div>
-        <div class="td" style="width:8px;height:8px;border-radius:50%;background:var(--accent);animation:tdot 1.2s infinite;animation-delay:0.2s;"></div>
-        <div class="td" style="width:8px;height:8px;border-radius:50%;background:var(--accent);animation:tdot 1.2s infinite;animation-delay:0.4s;"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ Chat Widget ══ -->
-<div class="chat-widget">
-  <div class="chat-panel" id="chatPanel">
-    <div class="chat-panel-hdr">
-      <div class="agent-av online" id="chatAvatar" style="background:linear-gradient(135deg,#1a7fff,#005bb5);width:36px;height:36px;font-size:0.85rem;flex-shrink:0;">K</div>
-      <div class="chat-agent-info">
-        <div class="chat-agent-name" id="chatAgentName">Kaizen · Taiwan</div>
-        <div class="chat-agent-status"><div class="dot-live" style="width:5px;height:5px;flex-shrink:0;"></div> <span id="chatStatusText">Online now</span></div>
-      </div>
-      <div class="chat-hdr-actions">
-        <button class="chat-hdr-btn transfer" onclick="openHandoff()">⇄ Transfer</button>
-        <button class="chat-hdr-btn" onclick="toggleChat()">✕</button>
-      </div>
-    </div>
-    <div class="chat-messages-area" id="chatMsgs">
-      <div class="cm cm-agent"><div class="cm-name" id="chatMsgName">Kaizen</div>Hi! I can see you're a member — how can I help you today? Need a quote, product info, or something else?</div>
-    </div>
-    <div class="chat-input-row">
-      <input class="chat-inp" id="chatInp" type="text" placeholder="Type a message…" onkeydown="if(event.key==='Enter')sendMsg()" />
-      <button class="chat-send-btn" onclick="sendMsg()">➤</button>
-    </div>
-  </div>
-  <button class="chat-fab" id="chatFab" onclick="toggleChat()">
-    💬
-    <div class="chat-fab-badge" id="chatFabBadge">1</div>
-  </button>
-</div>
-
-<div class="toast-wrap" id="toastWrap"></div>
-
-<script>
-  /* ── Page navigation ── */
-  function showPage(id, linkEl) {
-    document.querySelectorAll('.dash-page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + id).classList.add('active');
-    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
-    if (linkEl) linkEl.classList.add('active');
-    window.scrollTo({ top: 0 });
-  }
-
-  /* ── Orders table ── */
-  const orders = [
-    { id:'NX-2026-0312', product:'NEX Forged Series 19×9.5 ×8', cat:'Wheels', amount:'$3,840', date:'Apr 28', status:'shipped' },
-    { id:'NX-2026-0298', product:'Michelin Pilot Sport 4S ×4',  cat:'Tires',  amount:'$1,280', date:'Apr 22', status:'shipped' },
-    { id:'NX-2026-0285', product:'NEX TPMS Universal ×20',      cat:'TPMS',   amount:'$620',   date:'Apr 15', status:'active'  },
-    { id:'NX-2026-0271', product:'Off-Road 20×10 ×4',           cat:'Wheels', amount:'$2,160', date:'Apr 2',  status:'active'  },
-    { id:'NX-2026-0254', product:'Continental WinterContact ×4', cat:'Tires',  amount:'$980',   date:'Mar 18', status:'active'  },
-    { id:'NX-2026-0239', product:'NEX Forged 20×10 ×8',         cat:'Wheels', amount:'$5,120', date:'Mar 5',  status:'closed'  },
-    { id:'NX-2026-0218', product:'NEX TPMS Nexble ×8',          cat:'TPMS',   amount:'$480',   date:'Feb 20', status:'closed'  },
-  ];
-  const statusMap = { shipped:'status-shipped', active:'status-active', closed:'status-closed' };
-  const statusLabel = { shipped:'✈ Shipped', active:'✓ Delivered', closed:'Closed' };
-  const tbody = document.getElementById('ordersTable');
-  orders.forEach(o => {
-    tbody.innerHTML += `<tr style="border-bottom:1px solid var(--border);">
-      <td style="padding:0.75rem 1.25rem;font-size:0.8rem;color:var(--muted);">${o.id}</td>
-      <td style="padding:0.75rem 1rem;font-weight:500;">${o.product}</td>
-      <td style="padding:0.75rem 1rem;"><span class="badge badge-gray">${o.cat}</span></td>
-      <td style="padding:0.75rem 1rem;font-weight:700;">${o.amount}</td>
-      <td style="padding:0.75rem 1rem;font-size:0.8rem;color:var(--muted);">${o.date}</td>
-      <td style="padding:0.75rem 1rem;"><span class="status ${statusMap[o.status]}">${statusLabel[o.status]}</span></td>
-      <td style="padding:0.75rem 1rem;"><button class="btn btn-ghost btn-sm" onclick="showToast('Opening order details…','info')">View</button></td>
-    </tr>`;
-  });
-
-  /* ── Handoff modal ── */
-  let selectedTeam = 'auto';
-  function openHandoff() { document.getElementById('handoffModal').classList.add('open'); }
-  function closeHandoff() { document.getElementById('handoffModal').classList.remove('open'); document.getElementById('handoffStep1').style.display=''; document.getElementById('handoffStep2').style.display='none'; }
-  function selectTeam(val, el) {
-    selectedTeam = val;
-    document.querySelectorAll('.team-option').forEach(o => o.classList.remove('selected'));
-    el.classList.add('selected');
-  }
-  function toggleTopic(el) { el.classList.toggle('selected'); }
-  function connectToAgent() {
-    const teamLabels = { auto:['⚡','Finding fastest agent…'], tw:['🇹🇼','Connecting to Kaizen (Taiwan)…'], cn:['🇨🇳','Connecting to China team…'] };
-    const [flag, msg] = teamLabels[selectedTeam];
-    document.getElementById('handoffStep1').style.display = 'none';
-    document.getElementById('handoffStep2').style.display = 'block';
-    document.getElementById('connectingFlag').textContent = flag;
-    document.getElementById('connectingName').textContent = msg;
-    setTimeout(() => {
-      closeHandoff();
-      const agentMap = { auto:'Kaizen', tw:'Kaizen', cn:'Wei' };
-      const locMap = { auto:'TW', tw:'TW', cn:'CN' };
-      startChatWith(agentMap[selectedTeam], locMap[selectedTeam]);
-    }, 2000);
-  }
-
-  /* ── Chat widget ── */
-  let chatOpen = false;
-  let currentAgent = 'Kaizen';
-  const agentColors = { Kaizen:'linear-gradient(135deg,#1a7fff,#005bb5)', Wei:'linear-gradient(135deg,#e63946,#c1121f)', Linda:'linear-gradient(135deg,#f5a623,#e67e00)' };
-  const agentInitials = { Kaizen:'K', Wei:'W', Linda:'L' };
-  const agentLocLabel = { Kaizen:'Kaizen · Taiwan', Wei:'Wei · Guangzhou', Linda:'Linda · Guangzhou' };
-  const agentReplies = {
-    Kaizen: ["Got it! I'm looking at your account now. What specs are you after?", "Sure, let me pull up the latest stock for that. Give me one moment.", "For that order size, I can offer a better rate. Let me check with our warehouse."],
-    Wei:    ["Hello! I see you're asking about this — happy to help. Can you confirm the quantity?", "我看到了您的詢問。For bulk orders I can give you the factory price. What's your timeline?", "Let me check with production. Usually 18-22 days for custom. Is that OK for you?"],
-    Linda:  ["Hi! Soy Linda. How can I assist you today? I handle LatAm markets and bulk orders.", "Para esa cantidad puedo ofrecerte un precio especial. ¿Cuál es tu presupuesto?", "Let me prepare a quote for you — I'll have it within a few hours."],
-  };
-
-  function startChatWith(agent, loc) {
-    currentAgent = agent;
-    document.getElementById('chatAgentName').textContent = agentLocLabel[agent];
-    document.getElementById('chatAvatar').textContent = agentInitials[agent];
-    document.getElementById('chatAvatar').style.background = agentColors[agent];
-    document.getElementById('chatMsgName').textContent = agent;
-    document.getElementById('chatFabBadge').style.display = 'none';
-    const msgs = document.getElementById('chatMsgs');
-    msgs.innerHTML = `<div class="cm cm-system">🔄 Transferred to ${agent} · ${loc === 'TW' ? '🇹🇼 Taiwan' : '🇨🇳 China'} team</div>
-    <div class="cm cm-agent"><div class="cm-name">${agent}</div>${agentReplies[agent][0]}</div>`;
-    if (!chatOpen) toggleChat();
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    document.getElementById('chatPanel').classList.toggle('open', chatOpen);
-    document.getElementById('chatFabBadge').style.display = 'none';
-    if (chatOpen) document.getElementById('chatInp').focus();
-  }
-
-  function sendMsg() {
-    const inp = document.getElementById('chatInp');
-    const text = inp.value.trim();
-    if (!text) return;
-    inp.value = '';
-    const msgs = document.getElementById('chatMsgs');
-    msgs.innerHTML += `<div class="cm cm-user">${text}</div>`;
-    // typing indicator
-    const typing = document.createElement('div');
-    typing.className = 'typing-dots';
-    typing.innerHTML = '<div class="td"></div><div class="td"></div><div class="td"></div>';
-    msgs.appendChild(typing);
-    msgs.scrollTop = msgs.scrollHeight;
-    const replies = agentReplies[currentAgent];
-    const reply = replies[Math.floor(Math.random() * replies.length)];
-    setTimeout(() => {
-      msgs.removeChild(typing);
-      msgs.innerHTML += `<div class="cm cm-agent"><div class="cm-name">${currentAgent}</div>${reply}</div>`;
-      msgs.scrollTop = msgs.scrollHeight;
-    }, 1200 + Math.random() * 800);
-  }
-
-  /* ── RFQ actions ── */
-  function submitRFQ() {
-    showToast('Inquiry submitted! Sales team will respond within 4 hours.', 'success');
-  }
-  function acceptQuote() {
-    showToast('Quote accepted! Generating proforma invoice…', 'success');
-  }
-
-  /* ── Toast ── */
-  function showToast(msg, type = 'info') {
-    const wrap = document.getElementById('toastWrap');
-    const t = document.createElement('div');
-    t.className = 'toast ' + type;
-    const icons = { success:'✅', error:'❌', info:'ℹ️' };
-    t.innerHTML = `<span>${icons[type]}</span><span class="toast-text">${msg}</span>`;
-    wrap.appendChild(t);
-    setTimeout(() => t.remove(), 3500);
-  }
-
-  function logout() { window.location.href = 'login.html'; }
-</script>
-  <script>window.NEX_CHAT = { endpoint: 'https://new2-chatbotservice.pkxdtf.easypanel.host/chat' };</script>
-  <script src="/js/widget.js" defer></script>
-  <script src="/js/i18n.js" defer></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2d7d92d6a95f1c2c58ca23/1jr0r50oo';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  (function(d,t){
+    var BASE_URL="https://chatwoot-chatwoot.pkxdtf.easypanel.host";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";g.defer=true;g.async=true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){window.chatwootSDK.run({websiteToken:"X33dWaJDUB71P4S3qn8uce4T",baseUrl:BASE_URL});}
+  })(document,"script");
 </script>
 <!--End of Tawk.to Script-->
 </body>

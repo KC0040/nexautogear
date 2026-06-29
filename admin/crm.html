@@ -1,22 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CRM — NEXAutogear Sales</title>
+  <title>CRM � NEXAutogear Sales</title>
   <meta name="robots" content="noindex" />
   <link rel="stylesheet" href="../css/base.css" />
   <style>
     body { background: var(--bg); }
 
-    /* ── CRM Layout ── */
+    /* -- CRM Layout -- */
     .crm-wrap {
       display: flex;
       padding-top: var(--nav-h);
       min-height: 100vh;
     }
 
-    /* ── Left: Customer List ── */
+    /* -- Left: Customer List -- */
     .crm-list {
       width: 320px; flex-shrink: 0;
       background: var(--bg2);
@@ -87,7 +87,7 @@
     .ci-assigned.wei    { color: #ff8085; background: rgba(255,71,87,0.1); }
     .ci-assigned.linda  { color: #ffc060; background: rgba(255,165,2,0.1); }
 
-    /* ── Right: Customer Detail ── */
+    /* -- Right: Customer Detail -- */
     .crm-detail {
       flex: 1; overflow-y: auto;
       padding: 1.75rem 2rem;
@@ -98,7 +98,7 @@
       color: var(--muted); font-size: 0.875rem; text-align: center;
     }
 
-    /* ── Detail header ── */
+    /* -- Detail header -- */
     .detail-hdr {
       display: flex; align-items: flex-start; justify-content: space-between;
       gap: 1rem; flex-wrap: wrap;
@@ -107,7 +107,7 @@
     .detail-meta { font-size: 0.85rem; color: var(--muted); }
     .detail-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
-    /* ── Info grid ── */
+    /* -- Info grid -- */
     .info-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 0.85rem;
@@ -122,7 +122,7 @@
     .info-cell-value.success { color: var(--success); }
     .info-cell-value.warning { color: var(--warning); }
 
-    /* ── Sections ── */
+    /* -- Sections -- */
     .detail-section {
       background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius-lg); overflow: hidden;
@@ -136,7 +136,7 @@
     .ds-title { font-weight: 700; font-size: 0.875rem; letter-spacing: 0.02em; }
     .ds-body { padding: 1rem 1.25rem; }
 
-    /* ── Contact info ── */
+    /* -- Contact info -- */
     .contact-row {
       display: flex; align-items: center; gap: 1rem;
       padding: 0.5rem 0; border-bottom: 1px solid var(--border);
@@ -147,7 +147,7 @@
     .contact-value { font-weight: 500; }
     .contact-value a { color: var(--accent); }
 
-    /* ── Activity log ── */
+    /* -- Activity log -- */
     .activity-list { display: flex; flex-direction: column; gap: 0; }
     .activity-item {
       display: flex; gap: 0.85rem; padding: 0.85rem 0;
@@ -174,7 +174,7 @@
     .by-linda  { background: rgba(255,165,2,0.12);  color: #ffc060; }
     .by-bot    { background: rgba(255,255,255,0.06); color: var(--muted); }
 
-    /* ── Notes / AI summary ── */
+    /* -- Notes / AI summary -- */
     .ai-summary {
       background: rgba(255,209,101,0.04);
       border: 1px solid rgba(255,209,101,0.12);
@@ -197,7 +197,7 @@
     .note-input:focus { border-color: var(--accent); }
     .note-input::placeholder { color: var(--muted2); }
 
-    /* ── Pipeline stage ── */
+    /* -- Pipeline stage -- */
     .pipeline {
       display: flex; gap: 0; overflow: hidden;
       border-radius: var(--radius); border: 1px solid var(--border);
@@ -214,14 +214,14 @@
     .pipe-stage.current { background: rgba(255,209,101,0.12); color: var(--accent); }
     .pipe-stage.done    { background: rgba(46,213,115,0.08); color: var(--success); }
 
-    /* ── Assign select ── */
+    /* -- Assign select -- */
     .assign-row {
       display: flex; align-items: center; gap: 0.75rem;
       padding: 0.65rem 0; flex-wrap: wrap;
     }
     .assign-label { font-size: 0.8rem; color: var(--muted); flex-shrink: 0; }
 
-    /* ── Nav simplified (no links) ── */
+    /* -- Nav simplified (no links) -- */
     .crm-nav-title {
       font-size: 0.75rem; color: var(--muted);
       letter-spacing: 0.08em; text-transform: uppercase;
@@ -234,419 +234,14 @@
     }
   </style>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCMRTRPQFC"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GCMRTRPQFC');
-  </script>
-</head>
-<body>
-
-<nav class="nav">
-  <a href="../index.html" class="nav-logo">NEX<span>AUTO</span>GEAR</a>
-  <ul class="nav-links">
-    <li><a href="../members/dashboard.html">Portal</a></li>
-    <li><a href="crm.html" class="active">CRM</a></li>
-  </ul>
-  <div class="nav-actions">
-    <span class="crm-nav-title">Sales Team View</span>
-    <div style="width:1px;height:18px;background:var(--border);"></div>
-    <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;">
-      <div class="dot-live"></div>
-      Kaizen
-    </div>
-    <button class="btn btn-ghost btn-sm" onclick="window.location.href='../members/login.html'">Sign Out</button>
-  </div>
-</nav>
-
-<div class="crm-wrap">
-
-  <!-- ── Customer List ── -->
-  <aside class="crm-list">
-    <div class="crm-list-hdr">
-      <div class="crm-list-title">Customers <span style="color:var(--muted);font-weight:400;font-size:0.82rem;">(24)</span></div>
-      <input class="crm-search" type="text" placeholder="Search name, company, email…" oninput="filterCustomers(this.value)" />
-    </div>
-    <div class="crm-filter-row">
-      <button class="crm-filter active" onclick="setFilter('all',this)">All</button>
-      <button class="crm-filter" onclick="setFilter('hot',this)">Hot</button>
-      <button class="crm-filter" onclick="setFilter('warm',this)">Warm</button>
-      <button class="crm-filter" onclick="setFilter('active',this)">Active</button>
-      <button class="crm-filter" onclick="setFilter('cold',this)">Cold</button>
-    </div>
-    <div class="crm-scroll" id="customerList">
-      <!-- Populated by JS -->
-    </div>
-  </aside>
-
-  <!-- ── Customer Detail ── -->
-  <main class="crm-detail" id="crmDetail">
-    <div class="crm-empty" id="emptyState">
-      <div>
-        <div style="font-size:0.95rem;font-weight:600;margin-bottom:0.35rem;">Select a customer</div>
-        <div style="font-size:0.82rem;color:var(--muted2);">Click any name on the left to view their full profile and history</div>
-      </div>
-    </div>
-  </main>
-
-</div>
-
-<div class="toast-wrap" id="toastWrap"></div>
-
-<script>
-/* ── Customer data ── */
-const customers = [
-  {
-    id: 1,
-    name: 'Marco Rodriguez',
-    company: 'Mesa Tire & Wheel Inc.',
-    type: 'Tire Shop',
-    location: 'Phoenix, AZ — USA',
-    market: 'North America',
-    status: 'active',
-    tag: 'active',
-    email: 'marco@mesatireandwheel.com',
-    phone: '+1 (602) 555-0190',
-    whatsapp: '+16025550190',
-    lang: 'EN',
-    assigned: 'kaizen',
-    pipeline: 'repeat',
-    budget: '$5,000 – $20,000 / mo',
-    totalSpent: '$24,850',
-    lastContact: '2 days ago',
-    products: ['Wheels', 'Tires', 'TPMS'],
-    aiSummary: 'Long-term customer since Q1 2026. Primarily buys forged wheels (19–20") and matching tires for sport fitments. Reliable payment history. Interested in bulk TPMS for his shop installs. Has an open RFQ for 40x Off-Road 20×10 awaiting confirmation. Likely to expand tire volume in Q3. Recommend proactive outreach on Michelin summer range.',
-    activity: [
-      { type: 'blue', text: 'Submitted RFQ #Q-2026-041 — 40x Off-Road 20×10 Matte Black', time: 'Apr 30 · 2:14 PM', by: 'customer' },
-      { type: 'orange', text: 'Wei sent quote for RFQ-041: $7,920 total + $420 shipping', time: 'May 1 · 9:30 AM', by: 'wei' },
-      { type: 'gray', text: 'Support bot resolved: TPMS Nexble app connectivity question', time: 'Apr 28 · 6:45 PM', by: 'bot' },
-      { type: 'green', text: 'Order NX-2026-0312 shipped — DHL tracking added', time: 'Apr 28 · 11:00 AM', by: 'kaizen' },
-      { type: 'blue', text: 'Downloaded: Wheels Full Catalog 2026 v3.2', time: 'Apr 27 · 3:20 PM', by: 'customer' },
-      { type: 'green', text: 'Payment confirmed for Order NX-2026-0285 ($620)', time: 'Apr 15 · 10:05 AM', by: 'kaizen' },
-    ]
-  },
-  {
-    id: 2,
-    name: 'Carlos Mendez',
-    company: 'AutoZone Distribuidora MX',
-    type: 'Distributor',
-    location: 'Monterrey — Mexico',
-    market: 'Latin America',
-    status: 'hot',
-    tag: 'hot',
-    email: 'carlos.mendez@autozone-mx.com',
-    phone: '+52 81 5555 1234',
-    whatsapp: '+528155551234',
-    lang: 'ES / EN',
-    assigned: 'linda',
-    pipeline: 'quote',
-    budget: '$20,000 – $50,000 / mo',
-    totalSpent: '$8,400',
-    lastContact: 'Today',
-    products: ['TPMS', 'Tires'],
-    aiSummary: 'High-value prospect — distributes to 30+ tire shops across Nuevo León. Primarily interested in TPMS universal sensors in bulk (100–500 units/order) and all-season tires. Linda is currently negotiating Q2 volume pricing. Key decision factor is unit cost and lead time. Has a competitor offer from a Korean supplier — we are price-competitive but need to confirm 3-week lead time. Priority: close before May 15.',
-    activity: [
-      { type: 'blue', text: 'Requested Q2 volume pricing for TPMS ×500 units', time: 'Today · 10:20 AM', by: 'customer' },
-      { type: 'orange', text: 'Linda: "Working on volume quote, should have by EOD"', time: 'Today · 11:05 AM', by: 'linda' },
-      { type: 'blue', text: 'Downloaded: TPMS Product Catalog v4.0 (ES)', time: 'May 1 · 4:30 PM', by: 'customer' },
-      { type: 'purple', text: 'First contact via website inquiry form', time: 'Apr 25 · 9:15 AM', by: 'bot' },
-    ]
-  },
-  {
-    id: 3,
-    name: 'James Park',
-    company: 'Park Motorsports LLC',
-    type: 'Online Retailer',
-    location: 'Los Angeles, CA — USA',
-    market: 'North America',
-    status: 'warm',
-    tag: 'warm',
-    email: 'james@parkmotorsports.com',
-    phone: '+1 (310) 555-8822',
-    whatsapp: '+13105558822',
-    lang: 'EN',
-    assigned: 'kaizen',
-    pipeline: 'proposal',
-    budget: '$5,000 – $20,000 / mo',
-    totalSpent: '$3,200',
-    lastContact: '5 days ago',
-    products: ['Wheels'],
-    aiSummary: 'Sells modified import fitments online (eBay + own site). Interested in Street Performance and Bespoke Studio series. Has placed 2 test orders. Needs net-30 payment terms to scale — currently on prepay. Kaizen should discuss payment terms on next call. Potential for $8–12K/month if terms are approved.',
-    activity: [
-      { type: 'green', text: 'Order NX-2026-0290 delivered — 4x Street Perf 18×8.5', time: 'Apr 26 · 2:00 PM', by: 'kaizen' },
-      { type: 'blue', text: 'Asked about net-30 terms via email', time: 'Apr 22 · 3:45 PM', by: 'customer' },
-      { type: 'orange', text: 'Kaizen: Forwarded net-30 request to finance team', time: 'Apr 23 · 9:10 AM', by: 'kaizen' },
-    ]
-  },
-  {
-    id: 4,
-    name: 'Ahmed Al-Rashidi',
-    company: 'Gulf Auto Parts Trading',
-    type: 'Distributor',
-    location: 'Dubai — UAE',
-    market: 'Middle East',
-    status: 'warm',
-    tag: 'warm',
-    email: 'ahmed@gulfautoparts.ae',
-    phone: '+971 50 555 9900',
-    whatsapp: '+971505559900',
-    lang: 'EN / AR',
-    assigned: 'wei',
-    pipeline: 'contact',
-    budget: '$50,000+ / mo',
-    totalSpent: '$0',
-    lastContact: '1 week ago',
-    products: ['Wheels', 'Tires'],
-    aiSummary: 'High-potential new lead in UAE market. Distributes auto parts to GCC region. Currently sourcing forged wheels from a European supplier but open to switching if quality and lead time are competitive. Wants product samples + certifications before committing. Wei sent catalog and TUV certs. Follow-up call scheduled for May 10. Potential account size: $30–60K/month.',
-    activity: [
-      { type: 'blue', text: 'Requested TUV certification documents and product samples', time: 'Apr 28 · 1:00 PM', by: 'customer' },
-      { type: 'green', text: 'Wei sent: Certification pack + Wheels Catalog 2026', time: 'Apr 29 · 8:30 AM', by: 'wei' },
-      { type: 'purple', text: 'Registered via nexautogear.com/members/register', time: 'Apr 24 · 6:15 PM', by: 'bot' },
-    ]
-  },
-  {
-    id: 5,
-    name: 'Sofia Reyes',
-    company: 'Reyes Auto Center',
-    type: 'Tire Shop',
-    location: 'Miami, FL — USA',
-    market: 'North America',
-    status: 'cold',
-    tag: 'cold',
-    email: 'sofia@reyesautocenter.com',
-    phone: '+1 (305) 555-4411',
-    whatsapp: '',
-    lang: 'EN / ES',
-    assigned: 'linda',
-    pipeline: 'contact',
-    budget: '$1,000 – $5,000 / mo',
-    totalSpent: '$0',
-    lastContact: '3 weeks ago',
-    products: ['TPMS'],
-    aiSummary: 'Downloaded TPMS catalog 3 weeks ago but has not engaged further. Small shop, primarily interested in universal TPMS sensors for service use. Low urgency. Linda sent a follow-up email with no response. Recommend sending a targeted TPMS discount offer via email to re-engage.',
-    activity: [
-      { type: 'blue', text: 'Downloaded: TPMS Vehicle Compatibility Guide', time: 'Apr 12 · 11:30 AM', by: 'customer' },
-      { type: 'orange', text: 'Linda: Sent follow-up email — no response', time: 'Apr 16 · 3:00 PM', by: 'linda' },
-      { type: 'purple', text: 'Registered via nexautogear.com', time: 'Apr 10 · 9:00 AM', by: 'bot' },
-    ]
-  },
-];
-
-const agents = { kaizen: 'Kaizen', wei: 'Wei', linda: 'Linda' };
-const pipelineStages = ['contact','proposal','quote','negotiation','repeat'];
-const pipelineLabels = { contact:'Initial Contact', proposal:'Proposal Sent', quote:'Quote Active', negotiation:'Negotiating', repeat:'Repeat Customer' };
-
-let activeCustomer = null;
-let currentFilter = 'all';
-
-/* ── Render customer list ── */
-function renderList(list) {
-  const el = document.getElementById('customerList');
-  el.innerHTML = list.map(c => `
-    <div class="customer-item${activeCustomer?.id === c.id ? ' active' : ''}"
-         onclick="openCustomer(${c.id})" data-tag="${c.tag}">
-      <div class="ci-top">
-        <div class="ci-name">${c.name}</div>
-        <div class="ci-tag tag-${c.tag}">${c.tag.toUpperCase()}</div>
-      </div>
-      <div class="ci-company">${c.company} · ${c.location.split('—')[1]?.trim() || c.location}</div>
-      <div class="ci-bottom">
-        <div class="ci-last">${c.lastContact}</div>
-        <div class="ci-assigned ${c.assigned}">${agents[c.assigned]}</div>
-      </div>
-    </div>
-  `).join('');
-}
-renderList(customers);
-
-function filterCustomers(q) {
-  const lq = q.toLowerCase();
-  const filtered = customers.filter(c =>
-    (c.name+c.company+c.email).toLowerCase().includes(lq) &&
-    (currentFilter === 'all' || c.tag === currentFilter)
-  );
-  renderList(filtered);
-}
-
-function setFilter(f, el) {
-  currentFilter = f;
-  document.querySelectorAll('.crm-filter').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  filterCustomers('');
-}
-
-/* ── Open customer detail ── */
-function openCustomer(id) {
-  activeCustomer = customers.find(c => c.id === id);
-  renderList(customers.filter(c => currentFilter === 'all' || c.tag === currentFilter));
-  document.getElementById('emptyState').style.display = 'none';
-
-  const c = activeCustomer;
-  const stageIdx = pipelineStages.indexOf(c.pipeline);
-
-  const detail = document.getElementById('crmDetail');
-  detail.innerHTML = `
-    <div>
-      <!-- Header -->
-      <div class="detail-hdr">
-        <div>
-          <div class="detail-name">${c.company}</div>
-          <div class="detail-meta">${c.name} · ${c.type} · ${c.location}</div>
-        </div>
-        <div class="detail-actions">
-          <button class="btn btn-outline btn-sm" onclick="showToast('Opening email draft…','info')">Email</button>
-          <button class="btn btn-outline btn-sm" onclick="showToast('Opening WhatsApp…','info')">WhatsApp</button>
-          <button class="btn btn-primary btn-sm" onclick="openChat('${c.name}','${c.assigned}')">Chat Now</button>
-        </div>
-      </div>
-
-      <!-- Pipeline -->
-      <div class="pipeline" style="margin:1.25rem 0 0;">
-        ${pipelineStages.map((s,i) => `
-          <div class="pipe-stage ${i < stageIdx ? 'done' : i === stageIdx ? 'current' : ''}"
-               onclick="updatePipeline(${id},'${s}')">
-            ${pipelineLabels[s]}
-          </div>`).join('')}
-      </div>
-
-      <!-- Stats -->
-      <div class="info-grid" style="margin-top:1.25rem;">
-        <div class="info-cell">
-          <div class="info-cell-label">Total Spent</div>
-          <div class="info-cell-value accent">${c.totalSpent}</div>
-        </div>
-        <div class="info-cell">
-          <div class="info-cell-label">Est. Monthly Budget</div>
-          <div class="info-cell-value">${c.budget}</div>
-        </div>
-        <div class="info-cell">
-          <div class="info-cell-label">Primary Market</div>
-          <div class="info-cell-value">${c.market}</div>
-        </div>
-        <div class="info-cell">
-          <div class="info-cell-label">Products Interest</div>
-          <div class="info-cell-value">${c.products.join(' · ')}</div>
-        </div>
-        <div class="info-cell">
-          <div class="info-cell-label">Language</div>
-          <div class="info-cell-value">${c.lang}</div>
-        </div>
-        <div class="info-cell">
-          <div class="info-cell-label">Last Contact</div>
-          <div class="info-cell-value ${c.tag === 'cold' ? 'warning' : 'success'}">${c.lastContact}</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- AI Summary -->
-    <div class="detail-section">
-      <div class="ds-hdr">
-        <div class="ds-title">AI Account Summary</div>
-        <div style="font-size:0.72rem;color:var(--accent);font-weight:600;">Updated automatically</div>
-      </div>
-      <div class="ds-body">
-        <div class="ai-summary">
-          <div class="ai-summary-label">Agent Context</div>
-          ${c.aiSummary}
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="detail-section">
-      <div class="ds-hdr">
-        <div class="ds-title">Contact Information</div>
-        <div class="assign-row" style="padding:0;gap:0.5rem;">
-          <span class="assign-label">Assigned:</span>
-          <select class="form-select btn-sm" style="width:auto;padding:0.25rem 0.6rem;font-size:0.8rem;" onchange="reassign(${id},this.value)">
-            <option value="kaizen" ${c.assigned==='kaizen'?'selected':''}>Kaizen (TW)</option>
-            <option value="wei"    ${c.assigned==='wei'   ?'selected':''}>Wei (CN)</option>
-            <option value="linda"  ${c.assigned==='linda' ?'selected':''}>Linda (CN)</option>
-          </select>
-        </div>
-      </div>
-      <div class="ds-body">
-        <div class="contact-row"><span class="contact-label">Email</span><span class="contact-value"><a href="mailto:${c.email}">${c.email}</a></span></div>
-        <div class="contact-row"><span class="contact-label">Phone</span><span class="contact-value">${c.phone}</span></div>
-        <div class="contact-row"><span class="contact-label">WhatsApp</span><span class="contact-value">${c.whatsapp || '—'}</span></div>
-        <div class="contact-row"><span class="contact-label">Language</span><span class="contact-value">${c.lang}</span></div>
-        <div class="contact-row"><span class="contact-label">Business Type</span><span class="contact-value">${c.type}</span></div>
-      </div>
-    </div>
-
-    <!-- Activity Log -->
-    <div class="detail-section">
-      <div class="ds-hdr">
-        <div class="ds-title">Activity Log</div>
-        <button class="btn btn-ghost btn-sm" onclick="showToast('Full history loading…','info')">View all</button>
-      </div>
-      <div class="ds-body">
-        <div class="activity-list">
-          ${c.activity.map(a => `
-            <div class="activity-item">
-              <div class="activity-dot dot-${a.type}"></div>
-              <div class="activity-body">
-                <div class="activity-text">
-                  ${a.text}
-                  ${a.by !== 'customer' ? `<span class="activity-agent by-${a.by}">${a.by === 'bot' ? 'Support Bot' : agents[a.by]}</span>` : ''}
-                </div>
-                <div class="activity-meta">${a.time}</div>
-              </div>
-            </div>`).join('')}
-        </div>
-      </div>
-    </div>
-
-    <!-- Notes -->
-    <div class="detail-section">
-      <div class="ds-hdr"><div class="ds-title">Sales Notes</div></div>
-      <div class="ds-body" style="display:flex;flex-direction:column;gap:0.65rem;">
-        <textarea class="note-input" placeholder="Add a note visible to all agents and AI…"></textarea>
-        <div style="display:flex;justify-content:flex-end;">
-          <button class="btn btn-primary btn-sm" onclick="showToast('Note saved','success')">Save Note</button>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function updatePipeline(id, stage) {
-  const c = customers.find(x => x.id === id);
-  if (c) { c.pipeline = stage; openCustomer(id); showToast('Pipeline updated: ' + pipelineLabels[stage], 'success'); }
-}
-
-function reassign(id, agent) {
-  const c = customers.find(x => x.id === id);
-  if (c) { c.assigned = agent; showToast('Reassigned to ' + agents[agent], 'success'); renderList(customers); }
-}
-
-function openChat(name, agent) {
-  showToast('Opening sales chat with ' + agents[agent] + ' re: ' + name + '…', 'info');
-}
-
-function showToast(msg, type = 'info') {
-  const wrap = document.getElementById('toastWrap');
-  const t = document.createElement('div');
-  t.className = 'toast ' + type;
-  const icons = { success:'✓', error:'✕', info:'→' };
-  t.innerHTML = `<span style="font-weight:700;">${icons[type]}</span><span class="toast-text">${msg}</span>`;
-  wrap.appendChild(t);
-  setTimeout(() => t.remove(), 3500);
-}
-</script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2d7d92d6a95f1c2c58ca23/1jr0r50oo';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  (function(d,t){
+    var BASE_URL="https://chatwoot-chatwoot.pkxdtf.easypanel.host";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";g.defer=true;g.async=true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){window.chatwootSDK.run({websiteToken:"X33dWaJDUB71P4S3qn8uce4T",baseUrl:BASE_URL});}
+  })(document,"script");
 </script>
 <!--End of Tawk.to Script-->
 </body>
